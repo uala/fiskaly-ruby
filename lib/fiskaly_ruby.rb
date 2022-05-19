@@ -1,21 +1,28 @@
+files = Dir[File.join(".", "/lib/fiskaly_ruby/**/*.rb")]
+sorted_files = files.select { |f| f.include? '/base' } + files.reject { |f| f.include? '/base' }
+sorted_files.delete './lib/fiskaly_ruby/base_request.rb'
+sorted_files.prepend './lib/fiskaly_ruby/base_request.rb'
+sorted_files.each { |f| require_relative f[6..] }
+puts sorted_files
+
 module FiskalyRuby
   VERSION = '0.1.0'
 
   COMMANDS = [
-    FiskalyService::Management::Authenticate,
-    FiskalyService::Management::Organizations::Create,
-    FiskalyService::Management::Organizations::Retrieve,
-    FiskalyService::Management::Organizations::ApiKeys::Create,
-    FiskalyService::Management::Organizations::ApiKeys::List,
-    FiskalyService::KassenSichV::Authenticate,
-    FiskalyService::KassenSichV::Admin::Authenticate,
-    FiskalyService::KassenSichV::Admin::Logout,
-    FiskalyService::KassenSichV::TSS::Client::Create,
-    FiskalyService::KassenSichV::TSS::Client::Retrieve,
-    FiskalyService::KassenSichV::TSS::Export::Retrieve,
-    FiskalyService::KassenSichV::TSS::Export::RetrieveFile,
-    FiskalyService::KassenSichV::TSS::Export::Trigger,
-    FiskalyService::KassenSichV::TSS::Tx::Upsert
+    FiskalyRuby::Management::Authenticate,
+    FiskalyRuby::Management::Organizations::Create,
+    FiskalyRuby::Management::Organizations::Retrieve,
+    FiskalyRuby::Management::Organizations::ApiKeys::Create,
+    FiskalyRuby::Management::Organizations::ApiKeys::List,
+    FiskalyRuby::KassenSichV::Authenticate,
+    FiskalyRuby::KassenSichV::Admin::Authenticate,
+    FiskalyRuby::KassenSichV::Admin::Logout,
+    FiskalyRuby::KassenSichV::TSS::Client::Create,
+    FiskalyRuby::KassenSichV::TSS::Client::Retrieve,
+    FiskalyRuby::KassenSichV::TSS::Export::Retrieve,
+    FiskalyRuby::KassenSichV::TSS::Export::RetrieveFile,
+    FiskalyRuby::KassenSichV::TSS::Export::Trigger,
+    FiskalyRuby::KassenSichV::TSS::Tx::Upsert
   ]
 
   class << self
