@@ -30,7 +30,7 @@ module FiskalyService
       #
       # @return [Hash] Formatted response informations
       def call
-        response = self.class.post("/auth", headers: headers, body: body)
+        response = self.class.post('/auth', headers: headers, body: body)
 
         handle_response(response)
       end
