@@ -12,7 +12,7 @@ module FiskalyService
       # If you don't need the TSS anymore, you can disable it. To disable the TSS, set its state to "DISABLED". Only the TSS in the states "UNINITIALIZED" or "INITIALIZED" can be disabled. Disabling a TSS is permanent and can't be undone.
       class Update < Base
         # Tss 'description' payload field regexp
-        DESCRIPTION_REGEXP = /^[A-Za-z0-9 '()+,-.\/:=?]{0,100}$/
+        DESCRIPTION_REGEXP = %r{^[A-Za-z0-9 '()+,-./:=?]{0,100}$}
 
         # Available TSS states
         STATES = %i(UNINITIALIZED INITIALIZED DISABLED).freeze
