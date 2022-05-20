@@ -3,7 +3,6 @@ sorted_files = files.select { |f| f.include? '/base' } + files.reject { |f| f.in
 sorted_files.delete './lib/fiskaly_ruby/base_request.rb'
 sorted_files.prepend './lib/fiskaly_ruby/base_request.rb'
 sorted_files.each { |f| require_relative f[6..] }
-puts sorted_files
 
 module FiskalyRuby
   VERSION = '0.1.0'
@@ -22,7 +21,14 @@ module FiskalyRuby
     FiskalyRuby::KassenSichV::TSS::Export::Retrieve,
     FiskalyRuby::KassenSichV::TSS::Export::RetrieveFile,
     FiskalyRuby::KassenSichV::TSS::Export::Trigger,
-    FiskalyRuby::KassenSichV::TSS::Tx::Upsert
+    FiskalyRuby::KassenSichV::TSS::Tx::Upsert,
+    FiskalyRuby::DSFinVK::CashPointClosing::Create,
+    FiskalyRuby::DSFinVK::CashRegisters::Retrieve,
+    FiskalyRuby::DSFinVK::CashRegisters::Upsert,
+    FiskalyRuby::DSFinVK::Authenticate,
+    FiskalyRuby::DSFinVK::Exports::Download,
+    FiskalyRuby::DSFinVK::Exports::Retrieve,
+    FiskalyRuby::DSFinVK::Exports::Trigger
   ]
 
   class << self
