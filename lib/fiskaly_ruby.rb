@@ -22,7 +22,14 @@ module FiskalyRuby
     FiskalyRuby::KassenSichV::TSS::Export::Retrieve,
     FiskalyRuby::KassenSichV::TSS::Export::RetrieveFile,
     FiskalyRuby::KassenSichV::TSS::Export::Trigger,
-    FiskalyRuby::KassenSichV::TSS::Tx::Upsert
+    FiskalyRuby::KassenSichV::TSS::Tx::Upsert,
+    FiskalyRuby::DSFinVK::CashPointClosing::Create,
+    FiskalyRuby::DSFinVK::CashRegisters::Retrieve,
+    FiskalyRuby::DSFinVK::CashRegisters::Upsert,
+    FiskalyRuby::DSFinVK::Authenticate,
+    FiskalyRuby::DSFinVK::Exports::Download,
+    FiskalyRuby::DSFinVK::Exports::Retrieve,
+    FiskalyRuby::DSFinVK::Exports::Trigger
   ]
 
   class << self
