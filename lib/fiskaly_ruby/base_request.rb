@@ -1,5 +1,3 @@
-require 'httparty'
-
 module FiskalyRuby
   class BaseRequest
     include HTTParty
