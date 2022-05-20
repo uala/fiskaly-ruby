@@ -1,4 +1,5 @@
 require 'httparty'
+
 files = Dir[File.join(".", "/lib/fiskaly_ruby/**/*.rb")]
 sorted_files = files.select { |f| f.include? '/base' } + files.reject { |f| f.include? '/base' }
 sorted_files.delete './lib/fiskaly_ruby/base_request.rb'
@@ -23,13 +24,13 @@ module FiskalyRuby
     FiskalyRuby::KassenSichV::TSS::Export::RetrieveFile,
     FiskalyRuby::KassenSichV::TSS::Export::Trigger,
     FiskalyRuby::KassenSichV::TSS::Tx::Upsert,
-    FiskalyRuby::DSFinVK::CashPointClosing::Create,
-    FiskalyRuby::DSFinVK::CashRegisters::Retrieve,
-    FiskalyRuby::DSFinVK::CashRegisters::Upsert,
-    FiskalyRuby::DSFinVK::Authenticate,
-    FiskalyRuby::DSFinVK::Exports::Download,
-    FiskalyRuby::DSFinVK::Exports::Retrieve,
-    FiskalyRuby::DSFinVK::Exports::Trigger
+    # FiskalyRuby::DSFinVK::CashPointClosing::Create,
+    # FiskalyRuby::DSFinVK::CashRegisters::Retrieve,
+    # FiskalyRuby::DSFinVK::CashRegisters::Upsert,
+    # FiskalyRuby::DSFinVK::Authenticate,
+    # FiskalyRuby::DSFinVK::Exports::Download,
+    # FiskalyRuby::DSFinVK::Exports::Retrieve,
+    # FiskalyRuby::DSFinVK::Exports::Trigger
   ]
 
   class << self
