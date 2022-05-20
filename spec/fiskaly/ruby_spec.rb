@@ -1,11 +1,7 @@
 # frozen_string_literal: true
 
-RSpec.describe Fiskaly::Ruby do
+RSpec.describe FiskalyRuby do
   it 'has a version number' do
-    expect(Fiskaly::Ruby::VERSION).not_to be nil
-  end
-
-  it 'does something useful' do
-    expect(false).to eq(true)
+    expect(FiskalyRuby::VERSION).not_to be nil
   end
 end
