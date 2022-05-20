@@ -15,3 +15,5 @@ gem "rubocop", "~> 1.7"
 gem "httparty", "0.16.2"
 
 gem "pry"
+
+gem 'vcr', '~> 3.0', '>= 3.0.1'
