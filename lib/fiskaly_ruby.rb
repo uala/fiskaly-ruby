@@ -38,11 +38,11 @@ module FiskalyRuby
     COMMANDS.each do |command|
       name = command.name
       method_name = name.split('::')[1..].map do |command_name|
-         case command_name
-         when 'KassenSichV' then command_name.downcase
-         when 'TSS' then command_name.downcase
-         else command_name.gsub(/(.)([A-Z])/, '\1_\2').downcase
-         end
+        if %(KassenSichV TSS DSFinVK).include?(command_name)
+          command_name.downcase
+        else
+          command_name.gsub(/(.)([A-Z])/, '\1_\2').downcase
+        end
       end.join('_')
 
       define_method(method_name) do |args|
