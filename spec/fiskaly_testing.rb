@@ -1,6 +1,6 @@
 RSpec.shared_context 'setup Fiskaly env' do
   before do
-    tss_id_file = File.open(File.expand_path("tmp/test_fiskaly_tss_export_id", __dir__)) rescue nil
+    tss_id_file = File.open(File.expand_path('tmp/test_fiskaly_tss_export_id', __dir__)) rescue nil
     if tss_id_file.present?
       # Needed for VCR filters
       ENV['RSPEC_FISKALY_TSS_ID'] ||= File.read(tss_id_file)

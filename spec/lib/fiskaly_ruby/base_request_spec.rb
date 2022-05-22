@@ -15,7 +15,7 @@ RSpec.describe FiskalyRuby::BaseRequest do
   describe '.new' do
     context 'without required arguments' do
       it 'expects to not initialize "FiskalyRuby::BaseRequest" object without `token` argument' do
-        expect { described_class.new }.to raise_error(ArgumentError) { |error| expect(error.message).to eq "missing keyword: :token" }
+        expect { described_class.new }.to raise_error(ArgumentError) { |error| expect(error.message).to eq 'missing keyword: :token' }
       end
     end
   end
@@ -96,7 +96,7 @@ RSpec.describe FiskalyRuby::BaseRequest do
       it 'should raise error' do
         allow_any_instance_of(described_class).to receive(:required_payload_attributes).and_return(%i(x))
 
-        expect { base_request.body }.to raise_error(RuntimeError, "Missing required payload attributes: x")
+        expect { base_request.body }.to raise_error(RuntimeError, 'Missing required payload attributes: x')
       end
     end
 
