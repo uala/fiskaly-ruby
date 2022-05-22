@@ -11,7 +11,7 @@ module FiskalyRuby
         # Unique identifier of the ERS see {https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Publikationen/TechnischeRichtlinien/TR03153/TR-03153.pdf?__blob=publicationFile 7.5. BSI TR-03153}
         class Create < Base
           # Client 'serial_number' payload field regexp
-          SERIAL_NUMBER_REGEXP = %r{^[A-Za-z0-9 '()+,-./:=?]{0,100}$}
+          SERIAL_NUMBER_REGEXP = %r{^[A-Za-z0-9 '()+,-./:=?]{0,100}$}.freeze
 
           attr_reader :tss_id, :client_id
 

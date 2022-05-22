@@ -8,7 +8,7 @@ sorted_files.prepend './lib/fiskaly_ruby/base_request.rb'
 sorted_files.each { |f| require_relative f[6..] }
 
 module FiskalyRuby
-  VERSION = '0.1.0'
+  VERSION = '0.1.0'.freeze
 
   COMMANDS = [
     FiskalyRuby::Management::Authenticate,
@@ -35,7 +35,7 @@ module FiskalyRuby
     FiskalyRuby::DSFinVK::Exports::Download,
     FiskalyRuby::DSFinVK::Exports::Retrieve,
     FiskalyRuby::DSFinVK::Exports::Trigger
-  ]
+  ].freeze
 
   class << self
     COMMANDS.each do |command|

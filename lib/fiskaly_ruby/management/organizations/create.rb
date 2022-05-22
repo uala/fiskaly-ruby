@@ -8,7 +8,7 @@ module FiskalyRuby
       # Create a new Organization
       class Create < Base
         # Regexp from the API documentation
-        NAME_REGEXP = /^.{3,}$/
+        NAME_REGEXP = /^.{3,}$/.freeze
 
         # Required payload attributes
         #

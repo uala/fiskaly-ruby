@@ -4,7 +4,7 @@ module FiskalyRuby
       # KassenSichV APIs {https://developer.fiskaly.com/api/kassensichv/v2/#operation/changeAdminPin authenticate admin request}
       class ChangeAdminPin < Base
         # Rule from the API documentation
-        ADMIN_PIN_REGEXP = /^[a-z0-9A-Z\-]{6,}$/
+        ADMIN_PIN_REGEXP = /^[a-z0-9A-Z\-]{6,}$/.freeze
 
         attr_reader :token, :tss_id
 
