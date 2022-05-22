@@ -95,35 +95,35 @@ module FiskalyRuby
             schema = payload[:schema]
             state = payload[:state]
 
-            if tx_revision > 1 && schema.nil? && state != :FINISHED
-              error_message = <<~ERROR_MESSAGE
-                Missing payload 'schema' attribute.
-                When 'tx_revision' is greater then 1 and 'state' is different from :FINISHED
-                then payload 'schema' attribute must be filled with this structure:
-                {
-                  schema: {
-                    receipt: {
-                      receipt_type:,
-                      amounts_per_vat_rate: [
-                        {
-                          vat_rate:,
-                          amount:
-                        }
-                      ],
-                      amounts_per_payment_type: [
-                        {
-                          payment_type:,
-                          amount:,
-                          currency_code:
-                        }
-                      ]
-                    }
+            return unless tx_revision > 1 && schema.nil? && state != :FINISHED
+
+            error_message = <<~ERROR_MESSAGE
+              Missing payload 'schema' attribute.
+              When 'tx_revision' is greater then 1 and 'state' is different from :FINISHED
+              then payload 'schema' attribute must be filled with this structure:
+              {
+                schema: {
+                  receipt: {
+                    receipt_type:,
+                    amounts_per_vat_rate: [
+                      {
+                        vat_rate:,
+                        amount:
+                      }
+                    ],
+                    amounts_per_payment_type: [
+                      {
+                        payment_type:,
+                        amount:,
+                        currency_code:
+                      }
+                    ]
                   }
                 }
-              ERROR_MESSAGE
+              }
+            ERROR_MESSAGE
 
-              raise error_message
-            end
+            raise error_message
           end
         end
       end

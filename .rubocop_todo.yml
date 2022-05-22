@@ -120,15 +120,6 @@ Style/Documentation:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
-# Offense count: 4
-# Configuration parameters: MinBodyLength, AllowConsecutiveConditionals.
-Style/GuardClause:
-  Exclude:
-    - 'lib/fiskaly_ruby/dsfinvk/cash_registers/upsert.rb'
-    - 'lib/fiskaly_ruby/kassen_sich_v/base.rb'
-    - 'lib/fiskaly_ruby/kassen_sich_v/tss/tx/upsert.rb'
-    - 'lib/fiskaly_ruby/management/base.rb'
-
 # Offense count: 2
 # This cop supports safe auto-correction (--auto-correct).
 # Configuration parameters: EnforcedStyle, EnforcedShorthandSyntax, UseHashRocketsWithSymbolValues, PreferHashRocketsForNonAlnumEndingSymbols.
