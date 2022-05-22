@@ -1,0 +1,89 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://kassensichv-middleware.fiskaly.com/api/v2/auth
+    body:
+      encoding: UTF-8
+      string: '{"api_key":"<RSPEC_FISKALY_API_KEY>","api_secret":"<RSPEC_FISKALY_API_SECRET>"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<Authorization Code>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 04 Apr 2022 08:29:44 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Request-ID, Request-ID
+      Request-Id:
+      - cd085fb1dc47dc48a4bcf5e2166534e2
+      Response-Time:
+      - '0.121'
+      X-Response-Time:
+      - '0.121'
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<Access Token>","access_token_claims":{"env":"TEST","organization_id":"<Organization
+        ID>"},"access_token_expires_in":86400,"access_token_expires_at":1649147384,"refresh_token":"<Refresh
+        Token>","refresh_token_expires_in":172800,"refresh_token_expires_at":1649233784}'
+  recorded_at: Mon, 04 Apr 2022 08:29:44 GMT
+- request:
+    method: put
+    uri: https://kassensichv-middleware.fiskaly.com/api/v2/tss/some_tss_id
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<Authorization Code>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 04 Apr 2022 08:29:45 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Request-ID, Request-ID
+      Request-Id:
+      - ae3ff2363fd80d1ed8a6c791aea2b277
+      Response-Time:
+      - '0.097'
+      X-Response-Time:
+      - '0.097'
+    body:
+      encoding: UTF-8
+      string: '{"certificate":"<Certificate>","serial_number":"fd9b18424fb272ce26ad6f480b46bb294c42d4ee7f14fd02b3a83da92a71cb91","public_key":"BPcfUuifqqW4J8CwOH6oUEFk14Yvad1DD4HuRpGAaOQkevzD+2dq+2aiQGRG/IsPEEpLdpVZTTaUPoPn1syntsE=","signature_algorithm":"ecdsa-plain-SHA256","signature_timestamp_format":"unixTime","transaction_data_encoding":"UTF-8","max_number_registered_clients":199,"max_number_active_transactions":2000,"supported_update_variants":"SIGNED","metadata":{},"_id":"some_tss_id","_type":"TSS","_env":"TEST","_version":"2.0.11","time_creation":1649060985,"admin_puk":"8125729856","state":"CREATED"}'
+  recorded_at: Mon, 04 Apr 2022 08:29:45 GMT
+recorded_with: VCR 6.0.0

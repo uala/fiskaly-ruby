@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://dsfinvk.fiskaly.com/api/v1/auth
+    body:
+      encoding: UTF-8
+      string: '{"api_key":"<RSPEC_FISKALY_API_KEY>","api_secret":"<RSPEC_FISKALY_API_SECRET>"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<Authorization Code>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 21 Feb 2022 11:52:56 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1908'
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      X-Request-Id:
+      - 3e6775ac27608d7a7cb5b6f692fd7bcf
+      X-Response-Time:
+      - '0.116'
+      Response-Time:
+      - '0.116'
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<Access Token>","access_token_claims":{"env":"TEST","organization_id":"<Organization
+        ID>"},"access_token_expires_in":86400,"access_token_expires_at":1645530776,"refresh_token":"<Refresh
+        Token>","refresh_token_expires_in":172800,"refresh_token_expires_at":1645617176}'
+  recorded_at: Mon, 21 Feb 2022 11:52:56 GMT
+recorded_with: VCR 6.0.0

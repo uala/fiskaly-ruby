@@ -1,0 +1,47 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://kassensichv-middleware.fiskaly.com/api/v2/auth
+    body:
+      encoding: UTF-8
+      string: '{"api_key":"<RSPEC_FISKALY_API_KEY>","api_secret":"<RSPEC_FISKALY_API_SECRET>"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<Authorization Code>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 23 Feb 2022 08:09:46 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Request-ID, Request-ID
+      Request-Id:
+      - b891b19141357009ea5b84aa3c95918c
+      Response-Time:
+      - '0.003'
+      X-Response-Time:
+      - '0.003'
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<Access Token>","access_token_claims":{"env":"TEST","organization_id":"<Organization
+        ID>"},"access_token_expires_in":32168,"access_token_expires_at":1645635954,"refresh_token":"<Refresh
+        Token>","refresh_token_expires_in":118568,"refresh_token_expires_at":1645722354}'
+  recorded_at: Wed, 23 Feb 2022 08:09:46 GMT
+recorded_with: VCR 6.0.0

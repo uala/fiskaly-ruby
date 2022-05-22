@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://kassensichv-middleware.fiskaly.com/api/v2/tss/some_tss_id
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<Authorization Code>"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Tue, 05 Apr 2022 13:07:03 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '102'
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Request-ID, Request-ID
+      Request-Id:
+      - 18221817a788cdb47bff9669eac73cbc
+      Response-Time:
+      - '0.004'
+      X-Response-Time:
+      - '0.004'
+    body:
+      encoding: UTF-8
+      string: '{"status_code":401,"error":"Unauthorized","message":"could not parse
+        jwt: ''some_wrong_fiskaly_token''"}'
+  recorded_at: Tue, 05 Apr 2022 13:07:03 GMT
+recorded_with: VCR 6.0.0

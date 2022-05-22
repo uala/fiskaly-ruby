@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://kassensichv-middleware.fiskaly.com/api/v2/tss/some_tss_id/admin/auth
+    body:
+      encoding: UTF-8
+      string: '{"admin_pin":"<Tss admin pin>"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<Authorization Code>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 23 Feb 2022 08:16:42 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Request-ID, Request-ID
+      Request-Id:
+      - b788f8d175ff034941b33785958e449a
+      Response-Time:
+      - '0.074'
+      X-Response-Time:
+      - '0.074'
+    body:
+      encoding: UTF-8
+      string: "{}"
+  recorded_at: Wed, 23 Feb 2022 08:16:42 GMT
+recorded_with: VCR 6.0.0

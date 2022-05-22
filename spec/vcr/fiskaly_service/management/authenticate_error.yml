@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://dashboard.fiskaly.com/api/v0/auth
+    body:
+      encoding: UTF-8
+      string: '{"api_key":"<RSPEC_FISKALY_INVALID_API_KEY>","api_secret":"<RSPEC_FISKALY_API_SECRET>"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<Authorization Code>"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Wed, 23 Feb 2022 08:16:38 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '74'
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Request-Id:
+      - 04da35e06c739deb38ed5d26cfe879e9
+      X-Response-Time:
+      - '0.017'
+      Response-Time:
+      - '0.017'
+    body:
+      encoding: UTF-8
+      string: '{"message":"Invalid credentials","status_code":401,"error":"Unauthorized"}'
+  recorded_at: Wed, 23 Feb 2022 08:16:38 GMT
+recorded_with: VCR 6.0.0

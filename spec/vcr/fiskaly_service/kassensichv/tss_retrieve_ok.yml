@@ -1,0 +1,90 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://kassensichv-middleware.fiskaly.com/api/v2/auth
+    body:
+      encoding: UTF-8
+      string: '{"api_key":"<RSPEC_FISKALY_API_KEY>","api_secret":"<RSPEC_FISKALY_API_SECRET>"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<Authorization Code>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 05 Apr 2022 10:20:59 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Request-ID, Request-ID
+      Request-Id:
+      - 6c867ad6e8e13cf6d1d2f6d25d0cf330
+      Response-Time:
+      - '0.003'
+      X-Response-Time:
+      - '0.003'
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<Access Token>","access_token_claims":{"env":"TEST","organization_id":"<Organization
+        ID>"},"access_token_expires_in":79682,"access_token_expires_at":1649233741,"refresh_token":"<Refresh
+        Token>","refresh_token_expires_in":166082,"refresh_token_expires_at":1649320141}'
+  recorded_at: Tue, 05 Apr 2022 10:20:59 GMT
+- request:
+    method: get
+    uri: https://kassensichv-middleware.fiskaly.com/api/v2/tss/some_tss_id
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<Authorization Code>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 05 Apr 2022 10:21:27 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Request-ID, Request-ID
+      Request-Id:
+      - da17df9d1cfaa5313977369c4294fc8a
+      Response-Time:
+      - '0.013'
+      X-Response-Time:
+      - '0.013'
+    body:
+      encoding: UTF-8
+      string: '{"certificate":"<Certificate>","serial_number":"5d50ce8b39fe936bb933edb124cab403f79160b5926c1898d647acd730566beb","public_key":"BFuk5xFreVDfQZkb7DI+OSHuqBhltss9qftGoYB5Im48Qhtn3gu+wZm9DvH5jf73n4hmXm54qToU5cdtsTmQmAQ=","signature_algorithm":"ecdsa-plain-SHA256","signature_timestamp_format":"unixTime","transaction_data_encoding":"UTF-8","max_number_registered_clients":199,"max_number_active_transactions":2000,"supported_update_variants":"SIGNED","metadata":{},"_id":"some_tss_id","_type":"TSS","_env":"TEST","_version":"2.0.11","time_creation":1649067504,"description":"fiskaly
+        sign cloud-TSE (some_tss_id)","state":"INITIALIZED","signature_counter":"50","transaction_counter":"1","number_registered_clients":1,"number_active_transactions":1,"time_uninit":1649067507,"time_init":1649083246}'
+  recorded_at: Tue, 05 Apr 2022 10:21:27 GMT
+recorded_with: VCR 6.0.0

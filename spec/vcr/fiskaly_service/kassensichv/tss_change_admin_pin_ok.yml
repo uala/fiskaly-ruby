@@ -1,0 +1,171 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://kassensichv-middleware.fiskaly.com/api/v2/auth
+    body:
+      encoding: UTF-8
+      string: '{"api_key":"<RSPEC_FISKALY_API_KEY>","api_secret":"<RSPEC_FISKALY_API_SECRET>"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<Authorization Code>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 04 Apr 2022 10:18:24 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Request-ID, Request-ID
+      Request-Id:
+      - bd2a56fa6666357e9e5c22928a0f4f92
+      Response-Time:
+      - '0.002'
+      X-Response-Time:
+      - '0.002'
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<Access Token>","access_token_claims":{"env":"TEST","organization_id":"<Organization
+        ID>"},"access_token_expires_in":79879,"access_token_expires_at":1649147384,"refresh_token":"<Refresh
+        Token>","refresh_token_expires_in":166279,"refresh_token_expires_at":1649233784}'
+  recorded_at: Mon, 04 Apr 2022 10:18:24 GMT
+- request:
+    method: put
+    uri: https://kassensichv-middleware.fiskaly.com/api/v2/tss/some_tss_id
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<Authorization Code>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 04 Apr 2022 10:18:25 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Request-ID, Request-ID
+      Request-Id:
+      - 95c2dff970a02591f4a25e1a17511e67
+      Response-Time:
+      - '0.103'
+      X-Response-Time:
+      - '0.103'
+    body:
+      encoding: UTF-8
+      string: '{"certificate":"<Certificate>","serial_number":"5d50ce8b39fe936bb933edb124cab403f79160b5926c1898d647acd730566beb","public_key":"BFuk5xFreVDfQZkb7DI+OSHuqBhltss9qftGoYB5Im48Qhtn3gu+wZm9DvH5jf73n4hmXm54qToU5cdtsTmQmAQ=","signature_algorithm":"ecdsa-plain-SHA256","signature_timestamp_format":"unixTime","transaction_data_encoding":"UTF-8","max_number_registered_clients":199,"max_number_active_transactions":2000,"supported_update_variants":"SIGNED","metadata":{},"_id":"some_tss_id","_type":"TSS","_env":"TEST","_version":"2.0.11","time_creation":1649067504,"admin_puk":"8924567435","state":"CREATED"}'
+  recorded_at: Mon, 04 Apr 2022 10:18:24 GMT
+- request:
+    method: patch
+    uri: https://kassensichv-middleware.fiskaly.com/api/v2/tss/some_tss_id
+    body:
+      encoding: UTF-8
+      string: '{"state":"UNINITIALIZED"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<Authorization Code>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 04 Apr 2022 10:18:28 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1318'
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Request-ID, Request-ID
+      Request-Id:
+      - d6bb1b87c7e4430f400b28ad93602f81
+      Response-Time:
+      - '2.942'
+      X-Response-Time:
+      - '2.942'
+    body:
+      encoding: UTF-8
+      string: '{"_id":"some_tss_id","state":"UNINITIALIZED","time_creation":1649067504,"time_uninit":1649067507,"certificate":"<Certificate>","serial_number":"5d50ce8b39fe936bb933edb124cab403f79160b5926c1898d647acd730566beb","public_key":"BFuk5xFreVDfQZkb7DI+OSHuqBhltss9qftGoYB5Im48Qhtn3gu+wZm9DvH5jf73n4hmXm54qToU5cdtsTmQmAQ=","signature_counter":"25","signature_algorithm":"ecdsa-plain-SHA256","signature_timestamp_format":"unixTime","transaction_data_encoding":"UTF-8","number_registered_clients":0,"max_number_registered_clients":199,"number_active_transactions":0,"max_number_active_transactions":2000,"supported_update_variants":"SIGNED","_type":"TSS","_env":"TEST","_version":"2.0.11"}'
+  recorded_at: Mon, 04 Apr 2022 10:18:28 GMT
+- request:
+    method: patch
+    uri: https://kassensichv-middleware.fiskaly.com/api/v2/tss/some_tss_id/admin
+    body:
+      encoding: UTF-8
+      string: '{"new_admin_pin":"123456","admin_puk":"8924567435"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<Authorization Code>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 04 Apr 2022 10:18:28 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Request-ID, Request-ID
+      Request-Id:
+      - bc82a381cd469a7b776748771907ac6d
+      Response-Time:
+      - '0.084'
+      X-Response-Time:
+      - '0.084'
+    body:
+      encoding: UTF-8
+      string: "{}"
+  recorded_at: Mon, 04 Apr 2022 10:18:28 GMT
+recorded_with: VCR 6.0.0
