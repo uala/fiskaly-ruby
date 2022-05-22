@@ -7,13 +7,6 @@
 # versions of RuboCop, may require this file to be generated again.
 
 # Offense count: 1
-# Configuration parameters: Include.
-# Include: **/*.gemspec
-Gemspec/RequiredRubyVersion:
-  Exclude:
-    - 'fiskaly-ruby.gemspec'
-
-# Offense count: 1
 # This cop supports safe auto-correction (--auto-correct).
 # Configuration parameters: EnforcedStyle.
 # SupportedStyles: empty_lines, no_empty_lines
@@ -183,21 +176,6 @@ Style/PreferredHashMethods:
 Style/RescueModifier:
   Exclude:
     - 'spec/fiskaly_testing.rb'
-
-# Offense count: 67
-# This cop supports safe auto-correction (--auto-correct).
-# Configuration parameters: EnforcedStyle, ConsistentQuotesInMultiline.
-# SupportedStyles: single_quotes, double_quotes
-Style/StringLiterals:
-  Exclude:
-    - 'Gemfile'
-    - 'Rakefile'
-    - 'bin/console'
-    - 'fiskaly-ruby.gemspec'
-    - 'lib/fiskaly_ruby.rb'
-    - 'spec/fiskaly_testing.rb'
-    - 'spec/lib/fiskaly_ruby/base_request_spec.rb'
-    - 'spec/lib/fiskaly_ruby/dsfinvk/cash_point_closing/create_spec.rb'
 
 # Offense count: 1
 # This cop supports safe auto-correction (--auto-correct).
