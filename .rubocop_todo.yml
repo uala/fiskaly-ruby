@@ -145,22 +145,6 @@ Style/IfUnlessModifier:
   Exclude:
     - 'lib/fiskaly_ruby/dsfinvk/cash_registers/upsert.rb'
 
-# Offense count: 11
-# This cop supports safe auto-correction (--auto-correct).
-# Configuration parameters: EnforcedStyle.
-# SupportedStyles: literals, strict
-Style/MutableConstant:
-  Exclude:
-    - 'lib/fiskaly_ruby.rb'
-    - 'lib/fiskaly_ruby/dsfinvk/cash_registers/upsert.rb'
-    - 'lib/fiskaly_ruby/kassen_sich_v/admin/authenticate.rb'
-    - 'lib/fiskaly_ruby/kassen_sich_v/tss/change_admin_pin.rb'
-    - 'lib/fiskaly_ruby/kassen_sich_v/tss/client/create.rb'
-    - 'lib/fiskaly_ruby/kassen_sich_v/tss/tx/upsert.rb'
-    - 'lib/fiskaly_ruby/kassen_sich_v/tss/update.rb'
-    - 'lib/fiskaly_ruby/management/organizations/api_keys/create.rb'
-    - 'lib/fiskaly_ruby/management/organizations/create.rb'
-
 # Offense count: 1
 # This cop supports safe auto-correction (--auto-correct).
 # Configuration parameters: EnforcedStyle.

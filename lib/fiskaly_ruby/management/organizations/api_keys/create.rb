@@ -9,7 +9,7 @@ module FiskalyRuby
         # Create an API Key
         class Create < Base
           # Regexp from the API documentation
-          NAME_REGEXP = /^[a-z0-9\-]{3,30}$/
+          NAME_REGEXP = /^[a-z0-9\-]{3,30}$/.freeze
 
           # Allowed status parameter values
           STATUSES = %i(enabled disabled).freeze

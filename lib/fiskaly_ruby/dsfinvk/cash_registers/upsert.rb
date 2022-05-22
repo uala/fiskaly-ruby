@@ -7,8 +7,8 @@ module FiskalyRuby
       #
       # Insert or update a cash register/slave when a client already exists.
       class Upsert < Base
-        BRAND_MODEL_LENGTH_RANGE = 1..50
-        BASE_CURRENCY_CODE_REGEXP = /^[A-Z]{3}$/
+        BRAND_MODEL_LENGTH_RANGE = (1..50).freeze
+        BASE_CURRENCY_CODE_REGEXP = /^[A-Z]{3}$/.freeze
 
         attr_reader :client_id
 

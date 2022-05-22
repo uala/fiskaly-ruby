@@ -6,7 +6,7 @@ module FiskalyRuby
         attr_reader :tss_id
 
         # Rule from the API documentation
-        ADMIN_PIN_REGEXP = /^[a-z0-9A-Z\-]{6,}$/
+        ADMIN_PIN_REGEXP = /^[a-z0-9A-Z\-]{6,}$/.freeze
 
         def initialize(token:, tss_id:, payload: {})
           super(token: token, payload: payload)

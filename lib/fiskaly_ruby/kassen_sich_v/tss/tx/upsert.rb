@@ -19,7 +19,7 @@ module FiskalyRuby
         # Note: A TSS is only allowed to have 2000 open (type= "ACTIVE") transactions. In Case a TSS reaches this limit, you need to manually close (set to "CANCELLED" / "FINISHED", depending on your process) the open transactions.
         class Upsert < Base
           # Available Tx states
-          STATES = %i(ACTIVE CANCELLED FINISHED)
+          STATES = %i(ACTIVE CANCELLED FINISHED).freeze
 
           attr_reader :tss_id, :tx_id_or_number, :tx_revision
 
