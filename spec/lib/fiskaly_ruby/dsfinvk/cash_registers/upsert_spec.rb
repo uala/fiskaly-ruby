@@ -70,7 +70,7 @@ RSpec.describe FiskalyRuby::DSFinVK::CashRegisters::Upsert do
             allow(described_class).to receive(:put).and_return(error_request)
           end
 
-          let(:response) { instance_double(Net::HTTPBadRequest, message: 'Bad Request', body: {}) }
+          let(:response) { instance_double(Net::HTTPBadRequest, message: 'Bad Request', body: {}.to_json) }
           let(:error_request) { instance_double(HTTParty::Response, success?: false, response: response) }
 
           it 'succeeded' do

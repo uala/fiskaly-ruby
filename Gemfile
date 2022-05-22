@@ -14,12 +14,14 @@ gem "rubocop", "~> 1.7"
 
 gem "httparty", "0.16.2"
 
-gem "vcr"
-
 gem "pry"
 
-gem 'webmock'
-
-gem 'json_spec'
-
 gem 'activesupport'
+
+group :test do
+  gem "vcr"
+
+  gem 'webmock'
+
+  gem 'json_spec'
+end

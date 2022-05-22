@@ -68,6 +68,6 @@ module FiskalyTesting
   end
 
   def kassensichv_store_tss_export_reference(export_id:)
-    # TO CHECK Rails.root.join('tmp/test_fiskaly_tss_export_id').write(export_id)
+    # TODO: CHECK if this is needed -> Rails.root.join('tmp/test_fiskaly_tss_export_id').write(export_id)
   end
 end

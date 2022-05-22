@@ -33,7 +33,7 @@ RSpec.describe FiskalyRuby::DSFinVK::Exports::Download do
       end
 
       context 'with invalid params' do
-        let(:response) { instance_double(Net::HTTPBadRequest, message: 'Bad Request', body: {}) }
+        let(:response) { instance_double(Net::HTTPBadRequest, message: 'Bad Request', body: {}.to_json) }
         let(:error_request) { instance_double(HTTParty::Response, success?: false, response: response) }
 
         before do
