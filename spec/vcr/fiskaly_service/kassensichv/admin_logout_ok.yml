@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://kassensichv-middleware.fiskaly.com/api/v2/tss/some_tss_id/admin/logout
+    body:
+      encoding: UTF-8
+      string: "{}"
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<Authorization Code>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 23 Feb 2022 08:16:39 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Request-ID, Request-ID
+      Request-Id:
+      - ceb3f1a80b662ba819bf658367841a84
+      Response-Time:
+      - '0.075'
+      X-Response-Time:
+      - '0.075'
+    body:
+      encoding: UTF-8
+      string: "{}"
+  recorded_at: Wed, 23 Feb 2022 08:16:39 GMT
+recorded_with: VCR 6.0.0

@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://dashboard.fiskaly.com/api/v0/auth
+    body:
+      encoding: UTF-8
+      string: '{"api_key":"<RSPEC_FISKALY_API_KEY>","api_secret":"<RSPEC_FISKALY_API_SECRET>"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<Authorization Code>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 23 Feb 2022 08:16:39 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1913'
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Request-Id:
+      - b5a13cbe18c6a044c5eca08502fed25c
+      X-Response-Time:
+      - '0.001'
+      Response-Time:
+      - '0.001'
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<Access Token>","access_token_claims":{"env":"TEST","organization_id":"<Organization
+        ID>"},"access_token_expires_in":32524,"access_token_expires_at":1645636724,"refresh_token":"<Refresh
+        Token>","refresh_token_expires_in":118924,"refresh_token_expires_at":1645723124}'
+  recorded_at: Wed, 23 Feb 2022 08:16:39 GMT
+- request:
+    method: post
+    uri: https://dashboard.fiskaly.com/api/v0/organizations/a2aa222a-2222-22a2-2222-a22a2aa222a2/api-keys
+    body:
+      encoding: UTF-8
+      string: '{"name":"main","status":"enabled","managed_by_organization_id":"<RSPEC_FISKALY_MANAGED_BY_ORGANIZATION_ID>","metadata":{}}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<Authorization Code>"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Wed, 23 Feb 2022 08:16:39 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '109'
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Request-Id:
+      - 61734f0bd253b8bd71ad14a76532ca88
+      X-Response-Time:
+      - '0.010'
+      Response-Time:
+      - '0.010'
+    body:
+      encoding: UTF-8
+      string: '{"status_code":404,"error":"Not Found","code":"E_ORGANIZATION_NOT_FOUND","message":"Organization
+        not found."}'
+  recorded_at: Wed, 23 Feb 2022 08:16:39 GMT
+recorded_with: VCR 6.0.0

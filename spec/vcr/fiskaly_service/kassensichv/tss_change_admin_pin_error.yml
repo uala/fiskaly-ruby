@@ -1,0 +1,84 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://kassensichv-middleware.fiskaly.com/api/v2/auth
+    body:
+      encoding: UTF-8
+      string: '{"api_key":"<RSPEC_FISKALY_API_KEY>","api_secret":"<RSPEC_FISKALY_API_SECRET>"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<Authorization Code>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 04 Apr 2022 12:33:45 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Request-ID, Request-ID
+      Request-Id:
+      - 11c6c83bc37791c92938b65a2038266d
+      Response-Time:
+      - '0.002'
+      X-Response-Time:
+      - '0.002'
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<Access Token>","access_token_claims":{"env":"TEST","organization_id":"<Organization
+        ID>"},"access_token_expires_in":71758,"access_token_expires_at":1649147384,"refresh_token":"<Refresh
+        Token>","refresh_token_expires_in":158158,"refresh_token_expires_at":1649233784}'
+  recorded_at: Mon, 04 Apr 2022 12:33:45 GMT
+- request:
+    method: patch
+    uri: https://kassensichv-middleware.fiskaly.com/api/v2/tss/some_tss_id/admin
+    body:
+      encoding: UTF-8
+      string: '{"new_admin_pin":"<Tss admin pin>","admin_puk":"some-invalid-puk"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<Authorization Code>"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Mon, 04 Apr 2022 12:33:52 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '136'
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Response-Time:
+      - '0.134'
+      Response-Time:
+      - '0.134'
+    body:
+      encoding: UTF-8
+      string: '{"code":"E_ADMIN_LOGIN_FAILED","message":"ERROR_AUTHENTICATION_FAILED
+        (UNBLOCK_RESULT_FAILED)","status_code":401,"error":"Unauthorized"}'
+  recorded_at: Mon, 04 Apr 2022 12:33:52 GMT
+recorded_with: VCR 6.0.0

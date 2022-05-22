@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://dashboard.fiskaly.com/api/v0/auth
+    body:
+      encoding: UTF-8
+      string: '{"api_key":"<RSPEC_FISKALY_API_KEY>","api_secret":"<RSPEC_FISKALY_API_SECRET>"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<Authorization Code>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 23 Feb 2022 08:16:45 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1913'
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Request-Id:
+      - 331528191dfe3a4989e3086d5730f7d7
+      X-Response-Time:
+      - '0.002'
+      Response-Time:
+      - '0.002'
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<Access Token>","access_token_claims":{"env":"TEST","organization_id":"<Organization
+        ID>"},"access_token_expires_in":32519,"access_token_expires_at":1645636724,"refresh_token":"<Refresh
+        Token>","refresh_token_expires_in":118919,"refresh_token_expires_at":1645723124}'
+  recorded_at: Wed, 23 Feb 2022 08:16:44 GMT
+- request:
+    method: post
+    uri: https://dashboard.fiskaly.com/api/v0/organizations
+    body:
+      encoding: UTF-8
+      string: '{"name":"somename","address_line1":"some_address_line1","zip":"some_zip","town":"some_town","country_code":"ITA","managed_by_organization_id":"<RSPEC_FISKALY_MANAGED_BY_ORGANIZATION_ID>"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<Authorization Code>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 23 Feb 2022 08:16:45 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '331'
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Request-Id:
+      - cc4927894ce1c6366a1600b7b50c5156
+      X-Response-Time:
+      - '0.158'
+      Response-Time:
+      - '0.158'
+    body:
+      encoding: UTF-8
+      string: '{"_id":"424ebcea-78ac-470e-b7b7-4388f6884b6b","_type":"MANAGED_ORGANIZATION","_envs":["TEST"],"name":"somename","address_line1":"some_address_line1","zip":"some_zip","town":"some_town","country_code":"ITA","managed_by_organization_id":"<RSPEC_FISKALY_MANAGED_BY_ORGANIZATION_ID>","created_by_user":"4dda7805-f7df-40d9-bb39-4da630934d90"}'
+  recorded_at: Wed, 23 Feb 2022 08:16:45 GMT
+recorded_with: VCR 6.0.0

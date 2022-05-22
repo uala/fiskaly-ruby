@@ -1,0 +1,90 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://dsfinvk.fiskaly.com/api/v1/auth
+    body:
+      encoding: UTF-8
+      string: '{"api_key":"<RSPEC_FISKALY_API_KEY>","api_secret":"<RSPEC_FISKALY_API_SECRET>"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<Authorization Code>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 23 Feb 2022 16:39:52 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1908'
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      X-Request-Id:
+      - 29ca20ba64bc19932b584f9d4c6b3559
+      X-Response-Time:
+      - '0.003'
+      Response-Time:
+      - '0.003'
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<Access Token>","access_token_claims":{"env":"TEST","organization_id":"<Organization
+        ID>"},"access_token_expires_in":76246,"access_token_expires_at":1645710638,"refresh_token":"<Refresh
+        Token>","refresh_token_expires_in":162646,"refresh_token_expires_at":1645797038}'
+  recorded_at: Wed, 23 Feb 2022 16:39:52 GMT
+- request:
+    method: put
+    uri: https://dsfinvk.fiskaly.com/api/v1/exports/44dd4d44-d4d4-44d4-4dd4-4ddd4d4ddd44
+    body:
+      encoding: UTF-8
+      string: '{"start_date":1645547992,"end_date":1645634392}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<Authorization Code>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 23 Feb 2022 16:39:53 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '190'
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Origin
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      X-Request-Id:
+      - 972e42a7ff2fec75e53f2f4f4a70d761
+      X-Response-Time:
+      - '1.115'
+      Response-Time:
+      - '1.115'
+    body:
+      encoding: UTF-8
+      string: '{"state":"PENDING","time_request":1645634393,"time_expiration":1648053592,"_type":"EXPORT","_id":"44dd4d44-d4d4-44d4-4dd4-4ddd4d4ddd44","_env":"TEST","_version":"1.1.1","sign_api_version":2}'
+  recorded_at: Wed, 23 Feb 2022 16:39:53 GMT
+recorded_with: VCR 6.0.0

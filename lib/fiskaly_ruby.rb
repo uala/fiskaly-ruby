@@ -1,3 +1,7 @@
+require "active_support/all"
+require "pry"
+require 'net/http'
+
 files = Dir[File.join(".", "/lib/fiskaly_ruby/**/*.rb")]
 sorted_files = files.select { |f| f.include? '/base' } + files.reject { |f| f.include? '/base' }
 sorted_files.delete './lib/fiskaly_ruby/base_request.rb'

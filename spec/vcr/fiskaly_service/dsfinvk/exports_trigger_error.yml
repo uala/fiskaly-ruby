@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://dsfinvk.fiskaly.com/api/v1/auth
+    body:
+      encoding: UTF-8
+      string: '{"api_key":"<RSPEC_FISKALY_API_KEY>","api_secret":"<RSPEC_FISKALY_API_SECRET>"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<Authorization Code>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 23 Feb 2022 17:24:09 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1908'
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      X-Request-Id:
+      - ac643147bf53c46d2438f8e95f7c6694
+      X-Response-Time:
+      - '0.003'
+      Response-Time:
+      - '0.003'
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<Access Token>","access_token_claims":{"env":"TEST","organization_id":"<Organization
+        ID>"},"access_token_expires_in":73588,"access_token_expires_at":1645710638,"refresh_token":"<Refresh
+        Token>","refresh_token_expires_in":159988,"refresh_token_expires_at":1645797038}'
+  recorded_at: Wed, 23 Feb 2022 17:24:09 GMT
+- request:
+    method: put
+    uri: https://dsfinvk.fiskaly.com/api/v1/exports/some-invalid-id
+    body:
+      encoding: UTF-8
+      string: '{"start_date":1645550649,"end_date":1645637049}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<Authorization Code>"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Wed, 23 Feb 2022 17:24:09 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '135'
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Origin
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      X-Request-Id:
+      - b25268c9734548f0b2ffc03867bb08b5
+      X-Response-Time:
+      - '0.003'
+      Response-Time:
+      - '0.003'
+    body:
+      encoding: UTF-8
+      string: '{"code":"E_FAILED_SCHEMA_VALIDATION","message":"params.export_id should
+        match format \"uuid\"","status_code":400,"error":"Bad Request"}'
+  recorded_at: Wed, 23 Feb 2022 17:24:09 GMT
+recorded_with: VCR 6.0.0

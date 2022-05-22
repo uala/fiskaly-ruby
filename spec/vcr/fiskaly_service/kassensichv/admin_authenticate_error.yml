@@ -1,0 +1,40 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://kassensichv-middleware.fiskaly.com/api/v2/tss/some_tss_id/admin/auth
+    body:
+      encoding: UTF-8
+      string: '{"admin_pin":"<Tss admin pin>"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<Authorization Code>"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Wed, 23 Feb 2022 08:16:42 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '129'
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Access-Control-Allow-Origin:
+      - "*"
+      X-Response-Time:
+      - '0.000'
+      Response-Time:
+      - '0.000'
+    body:
+      encoding: UTF-8
+      string: '{"code":"E_PARSER","message":"can''t parse TSS ID: invalid UUID length:
+        11 (some_tss_id)","status_code":400,"error":"Bad Request"}'
+  recorded_at: Wed, 23 Feb 2022 08:16:42 GMT
+recorded_with: VCR 6.0.0
