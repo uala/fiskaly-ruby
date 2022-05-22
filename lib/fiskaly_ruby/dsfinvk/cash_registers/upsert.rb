@@ -72,9 +72,9 @@ module FiskalyRuby
         def _validate_base_currency_code
           base_currency_code = payload[:base_currency_code]
 
-          if !BASE_CURRENCY_CODE_REGEXP.match? base_currency_code
-            raise "Invalid base_currency_code for: '#{base_currency_code}', please use a three characters uppercase format"
-          end
+          return if BASE_CURRENCY_CODE_REGEXP.match? base_currency_code
+
+          raise "Invalid base_currency_code for: '#{base_currency_code}', please use a three characters uppercase format"
         end
       end
     end

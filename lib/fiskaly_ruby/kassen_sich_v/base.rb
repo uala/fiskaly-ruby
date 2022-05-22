@@ -17,17 +17,17 @@ module FiskalyRuby
 
         metadata = payload[:metadata]
 
-        unless metadata.is_a?(Hash)
-          raise(
-            <<~ERROR_MESSAGE
-              Invalid 'metadata' type: #{metadata.class.inspect}, please use a Hash.
-              You can use this parameter to attach custom key-value data to an object.
-              Metadata is useful for storing additional, structured information on an object.
-              Note: You can specify up to 20 keys,
-              with key names up to 40 characters long and values up to 500 characters long.
-            ERROR_MESSAGE
-          )
-        end
+        return if metadata.is_a?(Hash)
+
+        raise(
+          <<~ERROR_MESSAGE
+            Invalid 'metadata' type: #{metadata.class.inspect}, please use a Hash.
+            You can use this parameter to attach custom key-value data to an object.
+            Metadata is useful for storing additional, structured information on an object.
+            Note: You can specify up to 20 keys,
+            with key names up to 40 characters long and values up to 500 characters long.
+          ERROR_MESSAGE
+        )
       end
     end
   end
