@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://dsfinvk.fiskaly.com/api/v1/cash_point_closings/78ef6544-f7f7-407f-847e-1709921bae3e
+    body:
+      encoding: UTF-8
+      string: '{"head":{"export_creation_date":"1645710845","first_transaction_export_id":"5c02cb04-f028-481a-8e28-8b52ca64ec32","last_transaction_export_id":"348b62ae-4d2e-4d4f-8e51-b5bb2cc19258"},"cash_statement":{"business_cases":[{"type":"Umsatz","amounts_per_vat_id":[{"vat_definition_export_id":1,"incl_vat":28.56,"excl_vat":24.0,"vat":4.56}]}],"payment":{"full_amount":28.56,"cash_amount":28.56,"cash_amounts_by_currency":[{"currency_code":"EUR","amount":28.56}],"payment_types":[{"type":"Bar","currency_code":"EUR","amount":28.56}]}},"transactions":[{"head":{"tx_id":"5c02cb04-f028-481a-8e28-8b52ca64ec32","transaction_export_id":"tx_1","closing_client_id":"7b1abc48-3bcb-48b8-924d-d259cfbe171c","type":"Beleg","storno":false,"number":1,"timestamp_start":1645710394,"timestamp_end":1645710397,"user":{"user_export_id":"ich","name":"Ich"},"buyer":{"name":"Client
+        Name","buyer_export_id":"1","type":"Kunde"},"references":[{"type":"ExterneRechnung","external_export_id":"1234"}]},"data":{"full_amount_incl_vat":14.28,"payment_types":[{"type":"Bar","currency_code":"EUR","amount":14.28}],"amounts_per_vat_id":[{"vat_definition_export_id":1,"incl_vat":14.28,"excl_vat":12.0,"vat":2.28}],"lines":[{"business_case":{"type":"Umsatz","amounts_per_vat_id":[{"vat_definition_export_id":12,"incl_vat":14.28,"excl_vat":12,"vat":2.28}]},"lineitem_export_id":"1","storno":true,"text":"Sonstiges","item":{"number":"A","quantity":1.0,"price_per_unit":12}}]},"security":{"tss_tx_id":"5c02cb04-f028-481a-8e28-8b52ca64ec32"}},{"head":{"tx_id":"348b62ae-4d2e-4d4f-8e51-b5bb2cc19258","transaction_export_id":"tx_2","closing_client_id":"7b1abc48-3bcb-48b8-924d-d259cfbe171c","type":"Beleg","storno":false,"number":1,"timestamp_start":1645710401,"timestamp_end":1645710403,"user":{"user_export_id":"ich","name":"Ich"},"buyer":{"name":"Client
+        Name","buyer_export_id":"2","type":"Kunde"},"references":[{"type":"ExterneRechnung","external_export_id":"1234"}]},"data":{"full_amount_incl_vat":14.28,"payment_types":[{"type":"Bar","currency_code":"EUR","amount":14.28}],"amounts_per_vat_id":[{"vat_definition_export_id":1,"incl_vat":14.28,"excl_vat":12.0,"vat":2.28}],"lines":[{"business_case":{"type":"Umsatz","amounts_per_vat_id":[{"vat_definition_export_id":11,"incl_vat":14.28,"excl_vat":12,"vat":2.28}]},"lineitem_export_id":"1","storno":true,"text":"Sonstiges","item":{"number":"A","quantity":1.0,"price_per_unit":12}}]},"security":{"tss_tx_id":"348b62ae-4d2e-4d4f-8e51-b5bb2cc19258"}}],"client_id":"7b1abc48-3bcb-48b8-924d-d259cfbe171c","cash_point_closing_export_id":1}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<Authorization Code>"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Thu, 24 Feb 2022 13:57:12 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '102'
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Vary:
+      - Origin
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      X-Request-Id:
+      - 5d41e1b4ba910c6c123c6591760b57c3
+      X-Response-Time:
+      - '0.003'
+      Response-Time:
+      - '0.003'
+    body:
+      encoding: UTF-8
+      string: '{"status_code":401,"error":"Unauthorized","message":"could not parse
+        jwt: ''some_wrong_fiskaly_token''"}'
+  recorded_at: Thu, 24 Feb 2022 13:57:12 GMT
+recorded_with: VCR 6.0.0

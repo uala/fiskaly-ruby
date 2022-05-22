@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: put
+    uri: https://dsfinvk.fiskaly.com/api/v1/cash_registers/some_client_id
+    body:
+      encoding: UTF-8
+      string: '{"cash_register_type":{"type":"MASTER","tss_id":"some_tss_id"},"brand":"epson","model":"rs232","software":{"brand":"Epson"},"base_currency_code":"EUR"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<Authorization Code>"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 25 Feb 2022 14:52:12 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '419'
+      Connection:
+      - keep-alive
+      Vary:
+      - Accept-Encoding
+      - Origin
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Request-ID
+      X-Request-Id:
+      - 4a824f63e14ae27788dadd6aabcaaa44
+      X-Response-Time:
+      - '0.049'
+      Response-Time:
+      - '0.049'
+    body:
+      encoding: UTF-8
+      string: '{"cash_register_type":"MASTER","client_id":"some_client_id","revision":0,"tss_id":"some_tss_id","brand":"epson","model":"rs232","software":{"brand":"Epson"},"base_currency_code":"EUR","processing_flags":{"UmsatzsteuerNichtErmittelbar":false},"time_creation":1645799663,"time_update":1645799663,"_type":"CASH_REGISTER","_env":"TEST","_version":"1.2.0","sign_api_version":1}'
+  recorded_at: Fri, 25 Feb 2022 14:52:12 GMT
+recorded_with: VCR 6.0.0

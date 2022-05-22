@@ -1,0 +1,44 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://kassensichv-middleware.fiskaly.com/api/v2/auth
+    body:
+      encoding: UTF-8
+      string: '{"api_key":"<RSPEC_FISKALY_INVALID_API_KEY>","api_secret":"<RSPEC_FISKALY_API_SECRET>"}'
+    headers:
+      Content-Type:
+      - application/json
+      Authorization:
+      - "<Authorization Code>"
+  response:
+    status:
+      code: 401
+      message: Unauthorized
+    headers:
+      Date:
+      - Tue, 28 Dec 2021 14:39:56 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '67'
+      Connection:
+      - keep-alive
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Expose-Headers:
+      - X-Request-ID, Request-ID
+      Request-Id:
+      - ca1cc9783475000c347edf861f0ba137
+      Response-Time:
+      - '0.043'
+      X-Response-Time:
+      - '0.043'
+    body:
+      encoding: UTF-8
+      string: '{"message":"Unauthorized","status_code":401,"error":"Unauthorized"}'
+    http_version:
+  recorded_at: Tue, 28 Dec 2021 14:39:56 GMT
+recorded_with: VCR 2.9.3
