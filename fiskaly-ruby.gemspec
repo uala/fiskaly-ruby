@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "lib/fiskaly_ruby"
+require_relative 'lib/fiskaly_ruby'
 
 Gem::Specification.new do |spec|
   spec.name          = 'fiskaly-ruby'
@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description   = 'A ruby gem that allows you to easily comunicate with fiskaly service'
   spec.homepage      = 'https://github.com/twentymls/fiskaly-ruby'
   spec.license       = 'MIT'
-  spec.required_ruby_version = Gem::Requirement.new('>= 2.6.0')
+  spec.required_ruby_version = Gem::Requirement.new('>= 2.7.5')
 
   spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
 

@@ -5,14 +5,14 @@ RSpec.describe FiskalyRuby::DSFinVK::CashPointClosing::Create do
       client_id: ENV.fetch('RSPEC_FISKALY_CLIENT_ID', 'some_fiskaly_client_id'),
       cash_point_closing_export_id: 1,
       head: {
-        export_creation_date: "1645710845",
-        first_transaction_export_id: "5c02cb04-f028-481a-8e28-8b52ca64ec32",
-        last_transaction_export_id: "348b62ae-4d2e-4d4f-8e51-b5bb2cc19258"
+        export_creation_date: '1645710845',
+        first_transaction_export_id: '5c02cb04-f028-481a-8e28-8b52ca64ec32',
+        last_transaction_export_id: '348b62ae-4d2e-4d4f-8e51-b5bb2cc19258'
       },
       cash_statement: {
         business_cases: [
           {
-            type: "Umsatz",
+            type: 'Umsatz',
             amounts_per_vat_id: [
               {
                 vat_definition_export_id: 1,
@@ -28,14 +28,14 @@ RSpec.describe FiskalyRuby::DSFinVK::CashPointClosing::Create do
           cash_amount: 28.56,
           cash_amounts_by_currency: [
             {
-              currency_code: "EUR",
+              currency_code: 'EUR',
               amount: 28.56
             }
           ],
           payment_types: [
             {
-              type: "Bar",
-              currency_code: "EUR",
+              type: 'Bar',
+              currency_code: 'EUR',
               amount: 28.56
             }
           ]
@@ -44,27 +44,27 @@ RSpec.describe FiskalyRuby::DSFinVK::CashPointClosing::Create do
       transactions: [
         {
           head: {
-            tx_id: "5c02cb04-f028-481a-8e28-8b52ca64ec32",
-            transaction_export_id: "tx_1",
+            tx_id: '5c02cb04-f028-481a-8e28-8b52ca64ec32',
+            transaction_export_id: 'tx_1',
             closing_client_id: ENV.fetch('RSPEC_FISKALY_CLIENT_ID', 'some_fiskaly_client_id'),
-            type: "Beleg",
+            type: 'Beleg',
             storno: false,
             number: 1,
             timestamp_start: 1645710394,
             timestamp_end: 1645710397,
             user: {
-              user_export_id: "ich",
-              name: "Ich"
+              user_export_id: 'ich',
+              name: 'Ich'
             },
             buyer: {
-              name: "Client Name",
-              buyer_export_id: "1",
-              type: "Kunde"
+              name: 'Client Name',
+              buyer_export_id: '1',
+              type: 'Kunde'
             },
             references: [
               {
-                type: "ExterneRechnung",
-                external_export_id: "1234"
+                type: 'ExterneRechnung',
+                external_export_id: '1234'
               }
             ]
           },
@@ -72,8 +72,8 @@ RSpec.describe FiskalyRuby::DSFinVK::CashPointClosing::Create do
               full_amount_incl_vat: 14.28,
               payment_types: [
                 {
-                  type: "Bar",
-                  currency_code: "EUR",
+                  type: 'Bar',
+                  currency_code: 'EUR',
                   amount: 14.28
                 }
               ],
@@ -88,7 +88,7 @@ RSpec.describe FiskalyRuby::DSFinVK::CashPointClosing::Create do
               lines: [
                 {
                   business_case: {
-                    type: "Umsatz",
+                    type: 'Umsatz',
                     amounts_per_vat_id: [
                       {
                         vat_definition_export_id: 12,
@@ -98,11 +98,11 @@ RSpec.describe FiskalyRuby::DSFinVK::CashPointClosing::Create do
                       }
                     ]
                   },
-                  lineitem_export_id: "1",
+                  lineitem_export_id: '1',
                   storno: true,
-                  text: "Sonstiges",
+                  text: 'Sonstiges',
                   item: {
-                    number: "A",
+                    number: 'A',
                     quantity: 1.0,
                     price_per_unit: 12
                   }
@@ -110,32 +110,32 @@ RSpec.describe FiskalyRuby::DSFinVK::CashPointClosing::Create do
               ]
           },
           security: {
-              tss_tx_id: "5c02cb04-f028-481a-8e28-8b52ca64ec32"
+              tss_tx_id: '5c02cb04-f028-481a-8e28-8b52ca64ec32'
           }
         },
         {
           head: {
-            tx_id: "348b62ae-4d2e-4d4f-8e51-b5bb2cc19258",
-            transaction_export_id: "tx_2",
+            tx_id: '348b62ae-4d2e-4d4f-8e51-b5bb2cc19258',
+            transaction_export_id: 'tx_2',
             closing_client_id: ENV.fetch('RSPEC_FISKALY_CLIENT_ID', 'some_fiskaly_client_id'),
-            type: "Beleg",
+            type: 'Beleg',
             storno: false,
             number: 1,
             timestamp_start: 1645710401,
             timestamp_end: 1645710403,
             user: {
-              user_export_id: "ich",
-              name: "Ich"
+              user_export_id: 'ich',
+              name: 'Ich'
             },
             buyer: {
-              name: "Client Name",
-              buyer_export_id: "2",
-              type: "Kunde"
+              name: 'Client Name',
+              buyer_export_id: '2',
+              type: 'Kunde'
             },
             references: [
               {
-                type: "ExterneRechnung",
-                external_export_id: "1234"
+                type: 'ExterneRechnung',
+                external_export_id: '1234'
               }
             ]
           },
@@ -143,8 +143,8 @@ RSpec.describe FiskalyRuby::DSFinVK::CashPointClosing::Create do
             full_amount_incl_vat: 14.28,
             payment_types: [
               {
-                type: "Bar",
-                currency_code: "EUR",
+                type: 'Bar',
+                currency_code: 'EUR',
                 amount: 14.28
               }
             ],
@@ -159,7 +159,7 @@ RSpec.describe FiskalyRuby::DSFinVK::CashPointClosing::Create do
             lines: [
               {
                 business_case: {
-                  type: "Umsatz",
+                  type: 'Umsatz',
                   amounts_per_vat_id: [
                     {
                       vat_definition_export_id: 11,
@@ -169,11 +169,11 @@ RSpec.describe FiskalyRuby::DSFinVK::CashPointClosing::Create do
                     }
                   ]
                 },
-                lineitem_export_id: "1",
+                lineitem_export_id: '1',
                 storno: true,
-                text: "Sonstiges",
+                text: 'Sonstiges',
                 item: {
-                  number: "A",
+                  number: 'A',
                   quantity: 1.0,
                   price_per_unit: 12
                 }
@@ -181,7 +181,7 @@ RSpec.describe FiskalyRuby::DSFinVK::CashPointClosing::Create do
             ]
           },
           security: {
-              tss_tx_id: "348b62ae-4d2e-4d4f-8e51-b5bb2cc19258"
+              tss_tx_id: '348b62ae-4d2e-4d4f-8e51-b5bb2cc19258'
           }
         }
       ]
@@ -194,7 +194,7 @@ RSpec.describe FiskalyRuby::DSFinVK::CashPointClosing::Create do
 
   describe '.call'do
 
-    context "with successful response" do
+    context 'with successful response' do
       let(:create_call) do
         described_class.call(
           token: ENV.fetch('RSPEC_FISKALY_TOKEN', 'some_fiskaly_token'),
