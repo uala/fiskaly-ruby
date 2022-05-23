@@ -11,7 +11,7 @@ RSpec.describe FiskalyRuby::Management::Organizations::ApiKeys::List do
       authenticate_context[:body]['access_token']
     end
     let(:organization_id) { ENV.fetch('RSPEC_FISKALY_ORGANIZATION_ID', 'some_organization_id') }
-    let(:query) { { status: 'enabled'} }
+    let(:query) { { status: 'enabled' } }
 
     context 'with valid data' do
       vcr_options = { tag: :fiskaly_service, cassette_name: 'fiskaly_service/kassensichv/api_key_list_ok' }
