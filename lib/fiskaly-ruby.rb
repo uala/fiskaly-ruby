@@ -1,15 +1,16 @@
 require 'active_support/all'
 require 'net/http'
+require 'pry'
 
-files = Dir[File.join('.', '/lib/fiskaly_ruby/**/*.rb')]
-sorted_files = files.select { |f| f.include? '/base' } + files.reject { |f| f.include? '/base' }
-sorted_files.delete './lib/fiskaly_ruby/base_request.rb'
-sorted_files.prepend './lib/fiskaly_ruby/base_request.rb'
-sorted_files.each { |f| require_relative f[6..] }
+require_relative 'fiskaly_ruby/base_request'
+require_relative 'fiskaly_ruby/dsfinvk/base'
+require_relative 'fiskaly_ruby/kassen_sich_v/base'
+require_relative 'fiskaly_ruby/management/base'
+
+lib = File.expand_path('fiskaly_ruby', __dir__)
+Dir["#{lib}/**/*.rb"].sort.each { |f| require f }
 
 module FiskalyRuby
-  VERSION = '0.1.0'.freeze
-
   COMMANDS = [
     FiskalyRuby::Management::Authenticate,
     FiskalyRuby::Management::Organizations::Create,
@@ -49,7 +50,7 @@ module FiskalyRuby
       end.join('_')
 
       define_method(method_name) do |args|
-         command.call(args)
+        command.call(args)
       end
     end
   end
