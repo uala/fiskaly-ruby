@@ -8,7 +8,7 @@ RSpec.describe FiskalyRuby::BaseRequest do
 
   describe 'include "httparty"' do
     it 'should include "HTTParty"' do
-      expect(described_class.include? HTTParty).to be_truthy
+      expect(described_class.include?(HTTParty)).to be_truthy
     end
   end
 
