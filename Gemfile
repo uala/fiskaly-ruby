@@ -7,21 +7,23 @@ source 'https://rubygems.org'
 # gemspec
 
 group :development do
-  # gem 'rake', '~> 13.0'
+  gem 'rake', '~> 13.0'
 
-  # gem 'rspec', '~> 3.0'
+  gem 'rspec', '~> 3.0'
 
-  # gem 'rubocop', '~> 1.7'
+  gem 'rubocop', '~> 1.7'
 
-  # gem 'pry'
+  gem 'pry'
 
-  # gem 'activesupport'
+  gem 'activesupport'
 end
 
 group :test do
-  # gem 'vcr'
+  gem 'vcr'
 
-  # gem 'webmock'
+  gem 'httparty'
 
-  # gem 'json_spec'
+  gem 'webmock'
+
+  gem 'json_spec'
 end
