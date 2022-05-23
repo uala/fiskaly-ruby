@@ -20,15 +20,17 @@ RSpec.describe FiskalyRuby::Management::Authenticate do
 
       vcr_options = { tag: :fiskaly_service, cassette_name: 'fiskaly_service/management/authenticate_error' }
       it 'receives an unauthorized response', vcr: vcr_options do
-        expect(authenticate_call).to eq({
-          status: :error,
-          message: 'Unauthorized',
-          body: {
-            'message' => 'Invalid credentials',
-            'status_code' => 401,
-            'error' => 'Unauthorized'
+        expect(authenticate_call).to eq(
+          {
+            status: :error,
+            message: 'Unauthorized',
+            body: {
+              'message' => 'Invalid credentials',
+              'status_code' => 401,
+              'error' => 'Unauthorized'
+            }
           }
-        })
+        )
       end
     end
   end
@@ -44,15 +46,17 @@ RSpec.describe FiskalyRuby::Management::Authenticate do
 
       vcr_options = { tag: :fiskaly_service, cassette_name: 'fiskaly_service/management/authenticate_error' }
       it 'receives an unauthorized response', vcr: vcr_options do
-        expect(authenticate.call).to eq({
-          status: :error,
-          message: 'Unauthorized',
-          body: {
-            'message' => 'Invalid credentials',
-            'status_code' => 401,
-            'error' => 'Unauthorized'
+        expect(authenticate.call).to eq(
+          {
+            status: :error,
+            message: 'Unauthorized',
+            body: {
+              'message' => 'Invalid credentials',
+              'status_code' => 401,
+              'error' => 'Unauthorized'
+            }
           }
-        })
+        )
       end
     end
   end

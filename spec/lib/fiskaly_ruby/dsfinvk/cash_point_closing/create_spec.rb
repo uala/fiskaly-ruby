@@ -69,48 +69,48 @@ RSpec.describe FiskalyRuby::DSFinVK::CashPointClosing::Create do
             ]
           },
           data: {
-              full_amount_incl_vat: 14.28,
-              payment_types: [
-                {
-                  type: 'Bar',
-                  currency_code: 'EUR',
-                  amount: 14.28
+            full_amount_incl_vat: 14.28,
+            payment_types: [
+              {
+                type: 'Bar',
+                currency_code: 'EUR',
+                amount: 14.28
+              }
+            ],
+            amounts_per_vat_id: [
+              {
+                vat_definition_export_id: 1,
+                incl_vat: 14.28,
+                excl_vat: 12.00,
+                vat: 2.28
+              }
+            ],
+            lines: [
+              {
+                business_case: {
+                  type: 'Umsatz',
+                  amounts_per_vat_id: [
+                    {
+                      vat_definition_export_id: 12,
+                      incl_vat: 14.28,
+                      excl_vat: 12,
+                      vat: 2.28
+                    }
+                  ]
+                },
+                lineitem_export_id: '1',
+                storno: true,
+                text: 'Sonstiges',
+                item: {
+                  number: 'A',
+                  quantity: 1.0,
+                  price_per_unit: 12
                 }
-              ],
-              amounts_per_vat_id: [
-                {
-                  vat_definition_export_id: 1,
-                  incl_vat: 14.28,
-                  excl_vat: 12.00,
-                  vat: 2.28
-                }
-              ],
-              lines: [
-                {
-                  business_case: {
-                    type: 'Umsatz',
-                    amounts_per_vat_id: [
-                      {
-                        vat_definition_export_id: 12,
-                        incl_vat: 14.28,
-                        excl_vat: 12,
-                        vat: 2.28
-                      }
-                    ]
-                  },
-                  lineitem_export_id: '1',
-                  storno: true,
-                  text: 'Sonstiges',
-                  item: {
-                    number: 'A',
-                    quantity: 1.0,
-                    price_per_unit: 12
-                  }
-                }
-              ]
+              }
+            ]
           },
           security: {
-              tss_tx_id: '5c02cb04-f028-481a-8e28-8b52ca64ec32'
+            tss_tx_id: '5c02cb04-f028-481a-8e28-8b52ca64ec32'
           }
         },
         {
@@ -181,7 +181,7 @@ RSpec.describe FiskalyRuby::DSFinVK::CashPointClosing::Create do
             ]
           },
           security: {
-              tss_tx_id: '348b62ae-4d2e-4d4f-8e51-b5bb2cc19258'
+            tss_tx_id: '348b62ae-4d2e-4d4f-8e51-b5bb2cc19258'
           }
         }
       ]

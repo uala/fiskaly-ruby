@@ -64,10 +64,12 @@ RSpec.describe FiskalyRuby::BaseRequest do
       let(:request) { instance_double(HTTParty::Response, success?: true, response: response) }
 
       it 'should return successful parsed response' do
-        expect(base_request.handle_response(request)).to eq({
-          status: :ok,
-          body: { 'foo' => 'bar' }
-        })
+        expect(base_request.handle_response(request)).to eq(
+          {
+            status: :ok,
+            body: { 'foo' => 'bar' }
+          }
+        )
       end
     end
 
@@ -76,11 +78,13 @@ RSpec.describe FiskalyRuby::BaseRequest do
       let(:request) { instance_double(HTTParty::Response, success?: false, response: response) }
 
       it 'should return unsuccessful parsed response' do
-        expect(base_request.handle_response(request)).to eq({
-          status: :error,
-          message: request.response.message,
-          body: JSON.parse(request.response.body)
-        })
+        expect(base_request.handle_response(request)).to eq(
+          {
+            status: :error,
+            message: request.response.message,
+            body: JSON.parse(request.response.body)
+          }
+        )
       end
     end
   end
