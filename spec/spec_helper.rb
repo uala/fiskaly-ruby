@@ -4,6 +4,7 @@ require 'fiskaly-ruby'
 require 'fiskaly_testing'
 require 'rubygems'
 require 'vcr'
+require 'pry'
 require 'json_spec'
 
 VCR.configure do |config|
