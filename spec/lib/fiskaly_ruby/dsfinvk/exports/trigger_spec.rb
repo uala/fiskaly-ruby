@@ -1,4 +1,4 @@
-RSpec.describe FiskalyRuby::DSFinVK::Exports::Trigger do
+RSpec.describe FiskalyRuby::DSFinVK::Exports::Trigger, :time_frozen do
   it 'inherits from "FiskalyRuby::DSFinVK::Base" class' do
     expect(described_class).to be < FiskalyRuby::DSFinVK::Base
   end
@@ -29,7 +29,8 @@ RSpec.describe FiskalyRuby::DSFinVK::Exports::Trigger do
       authenticate_context[:body]['access_token']
     end
     let(:export_id) { ENV.fetch('RSPEC_FISKALY_TSS_EXPORT_ID', '44dd4d44-d4d4-44d4-4dd4-4ddd4d4ddd44') }
-    let(:payload) { { start_date: ::Time.current.yesterday.to_i, end_date: ::Time.current.to_i } }
+    let(:one_day) { 60 * 60 * 24 }
+    let(:payload) { { start_date: (Time.new - one_day).to_i, end_date: Time.new.to_i } }
 
     context 'with valid data' do
       vcr_options = { tag: :fiskaly_service, cassette_name: 'fiskaly_service/dsfinvk/exports_trigger_ok' }

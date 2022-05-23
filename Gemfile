@@ -14,8 +14,6 @@ group :development do
   gem 'rubocop', '~> 1.7'
 
   gem 'pry'
-
-  gem 'activesupport'
 end
 
 group :test do

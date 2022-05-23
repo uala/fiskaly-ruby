@@ -54,31 +54,31 @@ module FiskalyRuby
         def _validate_head
           head = payload[:head]
 
-          raise "Invalid head for: #{head.inspect}, cannot be empty" if head.blank?
+          raise "Invalid head for: #{head.inspect}, cannot be empty" if head.empty?
         end
 
         def _validate_cash_statement
           cash_statement = payload[:cash_statement]
 
-          raise "Invalid cash_statement for: #{cash_statement.inspect}, cannot be empty" if cash_statement.blank?
+          raise "Invalid cash_statement for: #{cash_statement.inspect}, cannot be empty" if cash_statement.empty?
         end
 
         def _validate_transactions
           transactions = payload[:transactions]
 
-          raise "Invalid transactions for: #{transactions.inspect}, cannot be empty" if transactions.blank?
+          raise "Invalid transactions for: #{transactions.inspect}, cannot be empty" if transactions.empty?
         end
 
         def _validate_client_id
           client_id = payload[:client_id]
 
-          raise "Invalid client_id for: #{client_id.inspect}, cannot be empty" if client_id.blank?
+          raise "Invalid client_id for: #{client_id.inspect}, cannot be empty" if client_id.empty?
         end
 
         def _validate_cash_point_closing_export_id
           cash_point_closing_export_id = payload[:cash_point_closing_export_id]
 
-          raise "Invalid cash_point_closing_export_id for: #{cash_point_closing_export_id.inspect}, cannot be empty" if cash_point_closing_export_id.blank?
+          raise "Invalid cash_point_closing_export_id for: #{cash_point_closing_export_id.inspect}, cannot be empty" if cash_point_closing_export_id.nil?
         end
       end
     end
