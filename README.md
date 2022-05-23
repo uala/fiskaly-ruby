@@ -20,7 +20,8 @@ Or install it yourself as:
 
 ## Usage
 
-This project is a work in progress, documentation also coming soon :)
+This project is a work in progress, we're working on filling this `Usage` area too.
+In the maintime, you can check the doc here: https://rubydoc.info/github/twentymls/fiskaly-ruby/master
 
 ## Development
 
