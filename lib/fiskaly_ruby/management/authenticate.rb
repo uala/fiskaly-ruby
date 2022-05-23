@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module FiskalyRuby
   module Management
     # Management APIs {https://developer.fiskaly.com/api/management/v0/#operation/authenticate authentication request}

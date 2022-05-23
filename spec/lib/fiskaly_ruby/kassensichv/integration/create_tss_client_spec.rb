@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe 'Create TSS client' do
   subject(:create_tss_client) do
     FiskalyRuby::KassenSichV::TSS::Client::Create.new(

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe FiskalyRuby::DSFinVK::Exports::Retrieve do
   context 'unit tests' do
     let(:export_retrieve) { described_class.new(token: 'some_token', export_id: 'some_export_id') }

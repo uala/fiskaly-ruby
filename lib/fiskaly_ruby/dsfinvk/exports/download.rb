@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module FiskalyRuby
   module DSFinVK
     module Exports
@@ -30,18 +32,22 @@ module FiskalyRuby
         private
 
         def handle_request(request)
-          if request.success?
-            {
-              status: :ok,
-              body: request.response.body
-            }
-          else
-            {
-              status: :error,
-              message: request.response.message,
-              body: JSON.parse(request.response.body)
-            }
-          end
+          request.success? ? _success_response(request) : _error_response(request)
+        end
+
+        def _success_response(request)
+          {
+            status: :ok,
+            body: request.response.body
+          }
+        end
+
+        def _error_response(request)
+          {
+            status: :error,
+            message: request.response.message,
+            body: JSON.parse(request.response.body)
+          }
         end
       end
     end

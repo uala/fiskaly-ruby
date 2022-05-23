@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe 'Change TSS admin PIN' do
   subject(:change_admin_pin) do
     FiskalyRuby::KassenSichV::TSS::ChangeAdminPin.new(token: token, tss_id: tss.tss_id, payload: payload).call

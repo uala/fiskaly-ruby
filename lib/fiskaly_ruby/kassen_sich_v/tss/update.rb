@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module FiskalyRuby
   module KassenSichV
     module TSS
@@ -70,7 +72,7 @@ module FiskalyRuby
         # @return NilClass
         def _validate_description
           # description isn't a required parameter so we can skip validation if it's not present
-          return unless JSON.parse(body).has_key? 'description'
+          return unless JSON.parse(body).key? 'description'
 
           description = payload[:description]
 

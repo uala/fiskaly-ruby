@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe FiskalyRuby::DSFinVK::CashRegisters::Retrieve do
   it 'inherits from "FiskalyRuby::DSFinVK::Base" class' do
     expect(described_class).to be < FiskalyRuby::DSFinVK::Base

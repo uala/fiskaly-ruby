@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module FiskalyRuby
   module DSFinVK
     # Base class for {https://developer.fiskaly.com/api/dsfinvk/v1}

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe 'Update TSS' do
   subject(:update_tss) { FiskalyRuby::KassenSichV::TSS::Update.new(token: token, tss_id: tss_id, payload: payload) }
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe FiskalyRuby::BaseRequest do
   let(:token) { 'some_token' }
   let(:payload) { { some: :payload } }
@@ -91,7 +93,7 @@ RSpec.describe FiskalyRuby::BaseRequest do
 
   describe '#headers' do
     it 'should return default headers hash' do
-      expect(base_request.headers).to eq({ :'Content-Type' => 'application/json', Authorization: "Bearer #{base_request.token}" })
+      expect(base_request.headers).to eq({ 'Content-Type': 'application/json', Authorization: "Bearer #{base_request.token}" })
     end
   end
 

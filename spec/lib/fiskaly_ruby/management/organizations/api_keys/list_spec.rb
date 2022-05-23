@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe FiskalyRuby::Management::Organizations::ApiKeys::List do
   it 'inherits from "FiskalyRuby::Management::Base" class' do
     expect(described_class).to be < FiskalyRuby::Management::Base

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'net/http'
 require 'pry'
 
@@ -9,6 +11,7 @@ require_relative 'fiskaly_ruby/management/base'
 lib = File.expand_path('fiskaly_ruby', __dir__)
 Dir["#{lib}/**/*.rb"].sort.each { |f| require f }
 
+# A ruby gem that allows you to easily communicate with fiskaly service
 module FiskalyRuby
   COMMANDS = [
     FiskalyRuby::Management::Authenticate,

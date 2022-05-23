@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe FiskalyRuby::KassenSichV::TSS::Export::Trigger do
   it 'inherits from "FiskalyRuby::KassenSichV::Base" class' do
     expect(described_class).to be < FiskalyRuby::KassenSichV::Base
@@ -33,7 +35,7 @@ RSpec.describe FiskalyRuby::KassenSichV::TSS::Export::Trigger do
 
     context 'with invalid data' do
       context 'with invalid "client_id"' do
-        let(:client_id) { 11111 }
+        let(:client_id) { 11_111 }
         let(:payload_with_invalid_client_id) { { client_id: client_id } }
         let(:error_message) { "Invalid client_id for: #{client_id.inspect}, please use a string" }
         let(:trigger_export) do
