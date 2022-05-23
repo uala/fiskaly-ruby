@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module FiskalyRuby
   module DSFinVK
     # DSFinV-K APIs {https://developer.fiskaly.com/api/dsfinvk/v1#operation/authenticate}

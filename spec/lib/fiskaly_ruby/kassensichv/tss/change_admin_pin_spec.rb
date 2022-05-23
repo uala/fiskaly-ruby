@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe FiskalyRuby::KassenSichV::TSS::ChangeAdminPin do
   describe 'ADMIN_PIN_REGEXP' do
     let(:char) { 'x' }
@@ -54,7 +56,7 @@ RSpec.describe FiskalyRuby::KassenSichV::TSS::ChangeAdminPin do
 
     it 'should return the body' do
       expect(authenticate.body).to be_json_eql({
-        admin_puk:     authenticate.payload[:admin_puk],
+        admin_puk: authenticate.payload[:admin_puk],
         new_admin_pin: authenticate.payload[:new_admin_pin]
       }.to_json)
     end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module FiskalyRuby
   module KassenSichV
     module TSS
@@ -23,24 +25,28 @@ module FiskalyRuby
           def call
             request = self.class.get("/tss/#{tss_id}/export/#{export_id}/file", headers: headers)
 
-            handle_request(request)
+            _handle_request(request)
           end
 
           private
 
-          def handle_request(request)
-            if request.success?
-              {
-                status: :ok,
-                body: request.response.body
-              }
-            else
-              {
-                status: :error,
-                message: request.response.message,
-                body: JSON.parse(request.response.body)
-              }
-            end
+          def _handle_request(request)
+            request.success? ? _success_response(request) : _error_response(request)
+          end
+
+          def _success_response(request)
+            {
+              status: :ok,
+              body: request.response.body
+            }
+          end
+
+          def _error_response(request)
+            {
+              status: :error,
+              message: request.response.message,
+              body: JSON.parse(request.response.body)
+            }
           end
         end
       end

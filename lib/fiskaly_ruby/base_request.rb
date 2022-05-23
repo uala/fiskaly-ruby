@@ -1,6 +1,9 @@
+# frozen_string_literal: true
+
 require 'httparty'
 
 module FiskalyRuby
+  # Base request handler class
   class BaseRequest
     include HTTParty
 
@@ -64,18 +67,7 @@ module FiskalyRuby
     #
     # @return [Hash] Formatted response informations
     def handle_response(request)
-      if request.success?
-        {
-          status: :ok,
-          body: JSON.parse(request.response.body)
-        }
-      else
-        {
-          status: :error,
-          message: request.response.message,
-          body: JSON.parse(request.response.body)
-        }
-      end
+      request.success? ? _success_response(request) : _error_response(request)
     end
 
     # Defines a default headers for requests
@@ -86,7 +78,7 @@ module FiskalyRuby
     #
     # @return [Hash]
     def headers
-      { :'Content-Type' => 'application/json', Authorization: "Bearer #{token}" }
+      { 'Content-Type': 'application/json', Authorization: "Bearer #{token}" }
     end
 
     # Helps to remember to implement `body` method in subclasses
@@ -114,6 +106,21 @@ module FiskalyRuby
     # Filter payload with allowed attributes, removes unnecessary attributes from the payload
     def _filter_payload_with_allowed_attributes
       payload.slice(*(required_payload_attributes + optional_payload_attributes))
+    end
+
+    def _success_response(request)
+      {
+        status: :ok,
+        body: JSON.parse(request.response.body)
+      }
+    end
+
+    def _error_response(request)
+      {
+        status: :error,
+        message: request.response.message,
+        body: JSON.parse(request.response.body)
+      }
     end
   end
 end

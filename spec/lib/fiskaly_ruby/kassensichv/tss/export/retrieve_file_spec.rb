@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe FiskalyRuby::KassenSichV::TSS::Export::RetrieveFile do
   it 'inherits from "FiskalyRuby::KassenSichV::Base" class' do
     expect(described_class).to be < FiskalyRuby::KassenSichV::Base

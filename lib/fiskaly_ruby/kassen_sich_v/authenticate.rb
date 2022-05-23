@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module FiskalyRuby
   module KassenSichV
     # KassenShichV APIs {https://developer.fiskaly.com/api/kassensichv/v2/#tag/Authentication authentication request}

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe 'Trigger TSS export' do
   subject(:trigger_tss_export) do
     FiskalyRuby::KassenSichV::TSS::Export::Trigger.new(token: token, tss_id: tss_id, export_id: export_id).call
