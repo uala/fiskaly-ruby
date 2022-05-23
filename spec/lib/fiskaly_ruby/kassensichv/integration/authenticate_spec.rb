@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe 'Authenticate' do
   subject(:authenticate) { FiskalyRuby::KassenSichV::Authenticate.call(api_key: api_key, api_secret: api_secret) }
 

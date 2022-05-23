@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe FiskalyRuby::DSFinVK::Exports::Trigger, :time_frozen do
   it 'inherits from "FiskalyRuby::DSFinVK::Base" class' do
     expect(described_class).to be < FiskalyRuby::DSFinVK::Base

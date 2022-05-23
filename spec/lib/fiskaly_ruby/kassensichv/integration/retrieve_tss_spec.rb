@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe 'Retrieve TSS' do
   subject(:retrieve_tss) { FiskalyRuby::KassenSichV::TSS::Retrieve.new(token: token, tss_id: tss_id).call }
 

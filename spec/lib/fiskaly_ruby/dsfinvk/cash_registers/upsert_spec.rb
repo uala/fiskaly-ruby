@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe FiskalyRuby::DSFinVK::CashRegisters::Upsert do
   context 'unit tests' do
     let(:cash_register_upsert) do

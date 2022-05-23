@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe FiskalyRuby::KassenSichV::Admin::Logout do
   describe '#call' do
     context 'with valid parameters' do

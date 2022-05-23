@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe FiskalyRuby::Management::Base do
   describe 'Base class' do
     it 'expect to inherit from "FiskalyRuby::BaseRequest" class' do

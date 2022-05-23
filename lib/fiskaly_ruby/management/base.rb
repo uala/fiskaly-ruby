@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module FiskalyRuby
   module Management
     # Base class for {https://developer.fiskaly.com/api/management/v0 Management APIs}
@@ -27,21 +29,23 @@ module FiskalyRuby
       # @return NilClass
       def _validate_metadata
         # metadata isn't a required parameter so we can skip validation if it's not present
-        return unless JSON.parse(body).has_key? 'metadata'
+        return unless JSON.parse(body).key? 'metadata'
 
         metadata = payload[:metadata]
 
         return if metadata.is_a?(Hash)
 
-        raise(
-          <<~ERROR_MESSAGE
-            Invalid 'metadata' type: #{metadata.class.inspect}, please use a Hash.
-            You can use this parameter to attach custom key-value data to an object.
-            Metadata is useful for storing additional, structured information on an object.
-            Note: You can specify up to 20 keys,
-            with key names up to 40 characters long and values up to 500 characters long.
-          ERROR_MESSAGE
-        )
+        raise _metadata_error_message(metadata)
+      end
+
+      def _metadata_error_message(metadata)
+        <<~ERROR_MESSAGE
+          Invalid 'metadata' type: #{metadata.class.inspect}, please use a Hash.
+          You can use this parameter to attach custom key-value data to an object.
+          Metadata is useful for storing additional, structured information on an object.
+          Note: You can specify up to 20 keys,
+          with key names up to 40 characters long and values up to 500 characters long.
+        ERROR_MESSAGE
       end
     end
   end

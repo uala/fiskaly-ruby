@@ -18,6 +18,22 @@ Style/PercentLiteralDelimiters:
   PreferredDelimiters:
     default: '()'
     '%i':    '()'
+    '%w':    '()'
 
 Layout/LineLength:
   Max: 263
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*.rb'
+
+Naming/FileName:
+  Exclude:
+    - 'lib/fiskaly-ruby.rb'
+
+Lint/MissingSuper:
+  Exclude:
+    - 'lib/**/*authenticate.rb'
+
+Style/StringLiteralsInInterpolation:
+  Enabled: false

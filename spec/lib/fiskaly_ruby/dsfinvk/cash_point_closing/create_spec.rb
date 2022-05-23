@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 
 RSpec.describe FiskalyRuby::DSFinVK::CashPointClosing::Create do
   let(:payload) do
@@ -50,8 +51,8 @@ RSpec.describe FiskalyRuby::DSFinVK::CashPointClosing::Create do
             type: 'Beleg',
             storno: false,
             number: 1,
-            timestamp_start: 1645710394,
-            timestamp_end: 1645710397,
+            timestamp_start: 1_645_710_394,
+            timestamp_end: 1_645_710_397,
             user: {
               user_export_id: 'ich',
               name: 'Ich'
@@ -121,8 +122,8 @@ RSpec.describe FiskalyRuby::DSFinVK::CashPointClosing::Create do
             type: 'Beleg',
             storno: false,
             number: 1,
-            timestamp_start: 1645710401,
-            timestamp_end: 1645710403,
+            timestamp_start: 1_645_710_401,
+            timestamp_end: 1_645_710_403,
             user: {
               user_export_id: 'ich',
               name: 'Ich'
@@ -192,8 +193,7 @@ RSpec.describe FiskalyRuby::DSFinVK::CashPointClosing::Create do
     expect(described_class).to be < FiskalyRuby::DSFinVK::Base
   end
 
-  describe '.call'do
-
+  describe '.call' do
     context 'with successful response' do
       let(:create_call) do
         described_class.call(

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe 'Upsert TSS transaction' do
   subject(:upsert_tss_tx) do
     FiskalyRuby::KassenSichV::TSS::Tx::Upsert.new(

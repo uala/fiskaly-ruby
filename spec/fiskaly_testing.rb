@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.shared_context 'setup Fiskaly env' do
   before do
     ENV['RSPEC_FISKALY_TSS_ID'] ||= 'some_tss_id'

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe FiskalyRuby::KassenSichV::Admin::Authenticate do
   describe 'ADMIN_PIN_REGEXP' do
     let(:char) { 'x' }

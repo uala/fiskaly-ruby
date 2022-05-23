@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module FiskalyRuby
   module KassenSichV
     module TSS
@@ -97,7 +99,11 @@ module FiskalyRuby
 
             return unless tx_revision > 1 && schema.nil? && state != :FINISHED
 
-            error_message = <<~ERROR_MESSAGE
+            raise _schema_error_message
+          end
+
+          def _schema_error_message
+            <<~ERROR_MESSAGE
               Missing payload 'schema' attribute.
               When 'tx_revision' is greater then 1 and 'state' is different from :FINISHED
               then payload 'schema' attribute must be filled with this structure:
@@ -122,8 +128,6 @@ module FiskalyRuby
                 }
               }
             ERROR_MESSAGE
-
-            raise error_message
           end
         end
       end

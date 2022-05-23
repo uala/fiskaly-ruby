@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe 'Create TSS' do
   subject(:create_tss) { FiskalyRuby::KassenSichV::TSS::Create.new(token: token, tss_id: tss_id) }
 

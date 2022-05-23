@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.describe FiskalyRuby::DSFinVK::Exports::Download do
   context 'unit tests' do
     let(:export_download) { described_class.new(token: 'some_token', export_id: 'some_export_id') }
