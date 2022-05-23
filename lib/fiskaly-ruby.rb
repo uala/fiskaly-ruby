@@ -25,6 +25,7 @@ module FiskalyRuby
     FiskalyRuby::KassenSichV::TSS::ChangeAdminPin,
     FiskalyRuby::KassenSichV::TSS::Create,
     FiskalyRuby::KassenSichV::TSS::Update,
+    FiskalyRuby::KassenSichV::TSS::Retrieve,
     FiskalyRuby::KassenSichV::TSS::Client::Create,
     FiskalyRuby::KassenSichV::TSS::Client::Retrieve,
     FiskalyRuby::KassenSichV::TSS::Export::Retrieve,
