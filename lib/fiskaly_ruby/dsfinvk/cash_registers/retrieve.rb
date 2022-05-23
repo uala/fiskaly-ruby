@@ -1,9 +1,9 @@
 module FiskalyRuby
   module DSFinVK
     module CashRegisters
+      # DSFinVK APIs {https://developer.fiskaly.com/api/DSFinVK/CashRegisters/v2/#operation/retrieve retrieve cash register request}
+      #
       class Retrieve < Base
-        # DSFinVK APIs {https://developer.fiskaly.com/api/DSFinVK/CashRegisters/v2/#operation/retrieve retrieve cash register request}
-
         attr_reader :client_id
 
         # @param token [String] Fiskaly token

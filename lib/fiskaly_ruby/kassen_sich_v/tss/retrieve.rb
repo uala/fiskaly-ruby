@@ -1,9 +1,9 @@
 module FiskalyRuby
   module KassenSichV
     module TSS
+      # KassenSichV APIs {https://developer.fiskaly.com/api/kassensichv/v2/#operation/retrieveTss retrieve tss request}
+      #
       class Retrieve < Base
-        # KassenSichV APIs {https://developer.fiskaly.com/api/kassensichv/v2/#operation/retrieveTss retrieve tss request}
-
         attr_reader :tss_id
 
         # @param token [String] JWT token
