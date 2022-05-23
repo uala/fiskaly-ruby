@@ -21,7 +21,6 @@ RSpec.describe 'Trigger TSS export' do
     vcr_options = { tag: :fiskaly_service, cassette_name: 'fiskaly_service/kassensichv/tss_trigger_export_ok' }
     it 'trigger an export', vcr: vcr_options do
       expect(trigger_tss_export).to match(status: :ok, body: a_kind_of(Hash))
-      FiskalyTesting.kassensichv_store_tss_export_reference(export_id: export_id)
     end
   end
 end

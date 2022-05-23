@@ -1,16 +1,8 @@
 RSpec.shared_context 'setup Fiskaly env' do
   before do
-    tss_id_file = File.open(File.expand_path('tmp/test_fiskaly_tss_export_id', __dir__)) rescue nil
-    if tss_id_file.present?
-      # Needed for VCR filters
-      ENV['RSPEC_FISKALY_TSS_ID'] ||= File.read(tss_id_file)
-      ENV['RSPEC_FISKALY_TSS_ADMIN_PUK'] ||= Rails.root.join('tmp/test_fiskaly_tss_admin_puk').read rescue nil
-      ENV['RSPEC_FISKALY_TSS_EXPORT_ID'] ||= Rails.root.join('tmp/test_fiskaly_tss_export_id').read rescue nil
-    else
-      ENV['RSPEC_FISKALY_TSS_ID'] ||= 'some_tss_id'
-      ENV['RSPEC_FISKALY_TSS_ADMIN_PUK'] ||= 'some-admin-puk'
-      ENV['RSPEC_FISKALY_TSS_EXPORT_ID'] ||= 'some_tss_export_id'
-    end
+    ENV['RSPEC_FISKALY_TSS_ID'] ||= 'some_tss_id'
+    ENV['RSPEC_FISKALY_TSS_ADMIN_PUK'] ||= 'some-admin-puk'
+    ENV['RSPEC_FISKALY_TSS_EXPORT_ID'] ||= 'some_tss_export_id'
   end
 end
 
@@ -37,8 +29,6 @@ module FiskalyTesting
       result = FiskalyRuby::KassenSichV::TSS::Create.call(token: token, tss_id: tss_id)
       FiskalyRuby::KassenSichV::TSS::Update.call(token: token, tss_id: tss_id, payload: { state: :UNINITIALIZED })
       admin_puk = result.dig(:body, 'admin_puk')
-      Rails.root.join('tmp/test_fiskaly_tss_id').write(tss_id)
-      Rails.root.join('tmp/test_fiskaly_tss_admin_puk').write(admin_puk)
     end
 
     TssData.new(tss_id, admin_puk)
@@ -65,9 +55,5 @@ module FiskalyTesting
         serial_number: '12345'
       }
     )
-  end
-
-  def kassensichv_store_tss_export_reference(export_id:)
-    # TODO: CHECK if this is needed -> Rails.root.join('tmp/test_fiskaly_tss_export_id').write(export_id)
   end
 end
