@@ -14,21 +14,6 @@ Layout/EmptyLinesAroundBlockBody:
   Exclude:
     - 'spec/lib/fiskaly_ruby/dsfinvk/cash_point_closing/create_spec.rb'
 
-# Offense count: 29
-# This cop supports safe auto-correction (--auto-correct).
-# Configuration parameters: EnforcedStyle, IndentationWidth.
-# SupportedStyles: special_inside_parentheses, consistent, align_braces
-Layout/FirstHashElementIndentation:
-  Exclude:
-    - 'spec/lib/fiskaly_ruby/base_request_spec.rb'
-    - 'spec/lib/fiskaly_ruby/dsfinvk/authenticate_spec.rb'
-    - 'spec/lib/fiskaly_ruby/dsfinvk/cash_point_closing/create_spec.rb'
-    - 'spec/lib/fiskaly_ruby/dsfinvk/cash_registers/upsert_spec.rb'
-    - 'spec/lib/fiskaly_ruby/dsfinvk/exports/download_spec.rb'
-    - 'spec/lib/fiskaly_ruby/dsfinvk/exports/retrieve_spec.rb'
-    - 'spec/lib/fiskaly_ruby/kassensichv/integration/authenticate_spec.rb'
-    - 'spec/lib/fiskaly_ruby/management/authenticate_spec.rb'
-
 # Offense count: 1
 # This cop supports safe auto-correction (--auto-correct).
 # Configuration parameters: AllowMultipleStyles, EnforcedHashRocketStyle, EnforcedColonStyle, EnforcedLastArgumentHashStyle.
