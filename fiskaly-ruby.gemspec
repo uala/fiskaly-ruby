@@ -7,8 +7,8 @@ require 'fiskaly_ruby/version'
 Gem::Specification.new do |spec|
   spec.name          = 'fiskaly-ruby'
   spec.version       = FiskalyRuby::VERSION
-  spec.authors       = ['pietro ventimiglia']
-  spec.email         = ['twntymls@gmail.com']
+  spec.authors       = ['Pietro Ventimiglia', 'Joseph Schito', 'Mattia Roccoberton']
+  spec.email         = ['twntymls@gmail.com', 'joseph.schito@gmail.com', 'mat@blocknot.es']
 
   spec.summary       = 'fiskaly service ruby component'
   spec.description   = 'A ruby gem that allows you to easily comunicate with fiskaly service'
