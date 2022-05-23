@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'fiskaly_ruby'
+require 'fiskaly-ruby'
 require 'fiskaly_testing'
 require 'rubygems'
 require 'vcr'
