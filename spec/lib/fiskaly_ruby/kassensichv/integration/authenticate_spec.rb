@@ -16,14 +16,16 @@ RSpec.describe 'Authenticate' do
 
     vcr_options = { tag: :fiskaly_service, cassette_name: 'fiskaly_service/kassensichv/authenticate_error' }
     it 'receives an unauthorized response', vcr: vcr_options do
-      expect(authenticate).to eq({
-        status: :error,
-        message: 'Unauthorized',
-        body: {
-          'message' => 'Unauthorized',
-          'status_code' => 401, 'error' => 'Unauthorized'
+      expect(authenticate).to eq(
+        {
+          status: :error,
+          message: 'Unauthorized',
+          body: {
+            'message' => 'Unauthorized',
+            'status_code' => 401, 'error' => 'Unauthorized'
+          }
         }
-      })
+      )
     end
   end
 end

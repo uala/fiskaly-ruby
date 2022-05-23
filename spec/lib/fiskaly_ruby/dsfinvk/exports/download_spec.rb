@@ -25,10 +25,12 @@ RSpec.describe FiskalyRuby::DSFinVK::Exports::Download do
 
         it 'succeeded' do
           expect(described_class).to receive(:get).and_return(ok_request)
-          expect(export_download.call).to match({
-            status: :ok,
-            body: ok_request.response.body
-          })
+          expect(export_download.call).to match(
+            {
+              status: :ok,
+              body: ok_request.response.body
+            }
+          )
         end
       end
 
@@ -42,11 +44,13 @@ RSpec.describe FiskalyRuby::DSFinVK::Exports::Download do
 
         it 'failed' do
           expect(described_class).to receive(:get).and_return(error_request)
-          expect(export_download.call).to match({
-            status: :error,
-            message: error_request.response.message,
-            body: JSON.parse(error_request.response.body)
-          })
+          expect(export_download.call).to match(
+            {
+              status: :error,
+              message: error_request.response.message,
+              body: JSON.parse(error_request.response.body)
+            }
+          )
         end
       end
     end
