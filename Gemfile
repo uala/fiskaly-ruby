@@ -4,22 +4,24 @@ source 'https://rubygems.org'
 
 # Specify your gem's dependencies in fiskaly-ruby.gemspec
 
-gemspec
+# gemspec
 
-gem 'rake', '~> 13.0'
+group :development do
+  # gem 'rake', '~> 13.0'
 
-gem 'rspec', '~> 3.0'
+  # gem 'rspec', '~> 3.0'
 
-gem 'rubocop', '~> 1.7'
+  # gem 'rubocop', '~> 1.7'
 
-gem 'pry'
+  # gem 'pry'
 
-gem 'activesupport'
+  # gem 'activesupport'
+end
 
 group :test do
-  gem 'vcr'
+  # gem 'vcr'
 
-  gem 'webmock'
+  # gem 'webmock'
 
-  gem 'json_spec'
+  # gem 'json_spec'
 end
