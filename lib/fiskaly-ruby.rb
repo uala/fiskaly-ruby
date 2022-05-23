@@ -1,4 +1,3 @@
-require 'active_support/all'
 require 'net/http'
 require 'pry'
 
