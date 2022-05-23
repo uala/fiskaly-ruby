@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'net/http'
-require 'pry'
 
 require_relative 'fiskaly_ruby/base_request'
 require_relative 'fiskaly_ruby/dsfinvk/base'
