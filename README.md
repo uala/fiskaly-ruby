@@ -1,8 +1,6 @@
 # FiskalyRuby
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/fiskaly_ruby`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+FiskalyRuby is a gem developed by UALA/Treatwell SaaS (cash) team.
+It provides a collection of commands that will help you communicate with Fiskaly Api (https://developer.fiskaly.com/api).
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+This project is a work in progress, documentation also coming soon :)
 
 ## Development
 
