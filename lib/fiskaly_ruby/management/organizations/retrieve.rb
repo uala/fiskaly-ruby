@@ -1,10 +1,11 @@
 module FiskalyRuby
   module Management
     module Organizations
+      # Management APIs {https://developer.fiskaly.com/api/management/organization/v0/#operation/retrieveOrganization retrieve organization}
+      #
+      # Retrieve Organization
+      #
       class Retrieve < Base
-        # Management APIs {https://developer.fiskaly.com/api/management/organization/v0/#operation/retrieveOrganization retrieve organization}
-
-        # Retrieve Organization
         attr_reader :organization_id
 
         # @param token [String] Fiskaly token
