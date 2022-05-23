@@ -4,14 +4,14 @@ RSpec.describe FiskalyRuby::KassenSichV::TSS::ChangeAdminPin do
 
     context 'valid admin_pin' do
       it 'should match the regexp' do
-        expect(described_class::ADMIN_PIN_REGEXP.match? char * 6).to be_truthy
-        expect(described_class::ADMIN_PIN_REGEXP.match? char.upcase * 6).to be_truthy
+        expect(described_class::ADMIN_PIN_REGEXP.match?(char * 6)).to be_truthy
+        expect(described_class::ADMIN_PIN_REGEXP.match?(char.upcase * 6)).to be_truthy
       end
     end
 
     context 'invalid admin_pin' do
       it 'should not match the regexp' do
-        expect(described_class::ADMIN_PIN_REGEXP.match? char * 1).to be_falsey
+        expect(described_class::ADMIN_PIN_REGEXP.match?(char * 1)).to be_falsey
       end
     end
   end
