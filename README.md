@@ -22,8 +22,13 @@ you can find the official in depths documentation here: https://rubydoc.info/git
 
 ## Usage
 
-[descrizione](#management-api)
+#### Summary:
 
+- [Management API usage](#management-api)
+
+- [DSFinV-K API usage](#DSFinV-K-api)
+
+- [KassenSichV](#kassensichv-api)
 
 ### Management API
 
