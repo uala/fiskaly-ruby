@@ -28,7 +28,7 @@ you can find the official in depths documentation here: https://rubydoc.info/git
 
 - [DSFinV-K API usage](#DSFinV-K-api)
 
-- [KassenSichV](#kassensichv-api)
+- [KassenSichV API usage](#kassensichv-api)
 
 ### Management API
 
