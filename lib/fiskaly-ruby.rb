@@ -44,7 +44,7 @@ module FiskalyRuby
     COMMANDS.each do |command|
       name = command.name
       method_name = name.split('::')[1..].map do |command_name|
-        if %(KassenSichV TSS DSFinVK).include?(command_name)
+        if %w(KassenSichV TSS DSFinVK).include?(command_name)
           command_name.downcase
         else
           command_name.gsub(/(.)([A-Z])/, '\1_\2').downcase
