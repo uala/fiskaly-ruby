@@ -375,6 +375,219 @@ FiskalyRuby.dsfinvk_exports_retrieve(
 )
 ```
 
+### KassenSichV API
+
+#### Authenticate
+
+https://developer.fiskaly.com/api/kassensichv/v2/#tag/Authentication
+
+```ruby
+FiskalyRuby.kassensichv_authenticate(
+  api_key: 'fiskaly_api_key',
+  api_secret: 'fiskaly_api_secret'
+)
+```
+
+#### ADMIN authenticate
+
+https://developer.fiskaly.com/api/kassensichv/v2/#operation/authenticateAdmin
+
+```ruby
+FiskalyRuby.kassensichv_admin_authenticate(
+  token:   'access_token',
+  tss_id:  'tss_id',
+  payload: {
+    admin_pin: 'fiskaly_admin_pin'
+  }
+)
+```
+
+#### ADMIN logut
+
+https://developer.fiskaly.com/api/kassensichv/v2/#operation/logoutAdmin
+
+```ruby
+FiskalyRuby.kassensichv_admin_logout(
+  token:  'access_token',
+  tss_id: 'fiskaly_tss_id'
+)
+```
+
+#### Change admin pin
+
+https://developer.fiskaly.com/api/kassensichv/v2/#operation/changeAdminPin
+
+```ruby
+FiskalyRuby.kassensichv_tss_change_admin_pin(
+  token:   'access_token',
+  tss_id:  'tss_id',
+  payload: {
+    admin_puk:     'admin_puk',
+    new_admin_pin: 'new_admin_pin'
+  }
+)
+```
+
+#### Create TSS
+
+https://developer.fiskaly.com/api/kassensichv/v2/#operation/createTss
+
+```ruby
+FiskalyRuby.kassensichv_tss_create(
+  token: 'access_token',
+  tss_id: 'tss_id', # must send a random uuid, ex: SecureRandom.uuid
+)
+```
+
+#### Initialize TSS
+
+https://developer.fiskaly.com/api/kassensichv/v2/#operation/updateTss
+
+```ruby
+FiskalyRuby.kassensichv_tss_update(
+  token: 'access_token',
+  tss_id: 'tss_id',
+  payload: { state: :UNINITIALIZED }
+)
+```
+
+#### Deploy TSS
+
+https://developer.fiskaly.com/api/kassensichv/v2/#operation/updateTss
+
+```ruby
+FiskalyRuby.kassensichv_tss_update(
+  token: 'access_token',
+  tss_id: 'tss_id',
+  payload: { state: :INITIALIZED }
+)
+```
+
+#### Retrieve TSS
+
+https://developer.fiskaly.com/api/kassensichv/v2/#operation/retrieveTss
+
+```ruby
+FiskalyRuby.kassensichv_tss_retrieve(
+  token: 'access_token',
+  tss_id: 'tss_id',
+)
+```
+
+#### Create Client (TSS)
+
+https://developer.fiskaly.com/api/kassensichv/v2/#operation/createClient
+
+```ruby
+FiskalyRuby.kassensichv_tss_client_create(
+  token: 'access_token',
+  tss_id: 'tss_id'
+)
+```
+
+#### Retrieve Client (TSS)
+
+https://developer.fiskaly.com/api/kassensichv/v2/#operation/retrieveClient
+
+```ruby
+FiskalyRuby.kassensichv_tss_client_retrieve(
+  token: 'access_token',
+  tss_id: 'tss_id'
+)
+```
+
+#### Retrieve TSS export
+
+https://developer.fiskaly.com/api/kassensichv/v2#operation/retrieveExport
+
+```ruby
+FiskalyRuby.kassensichv_tss_export_retrieve(
+  token: 'token',
+  tss_id: 'fiskaly_tss_id',
+  export_id: 'export_id'
+)
+```
+
+#### Retrieve file TSS export
+
+https://developer.fiskaly.com/api/kassensichv/v2#operation/retrieveExportFile
+
+```ruby
+FiskalyRuby.kassensichv_tss_export_retrieve_file(
+  token: 'token',
+  tss_id: 'fiskaly_tss_id',
+  export_id: 'export_id'
+)
+```
+
+#### Trigger TSS export
+
+https://developer.fiskaly.com/api/kassensichv/v2#operation/triggerExport
+
+```ruby
+FiskalyRuby.kassensichv_tss_export_trigger(
+  token: 'access_token',
+  tss_id: 'tss_id',
+  export_id: 'export_id', # random uuid, ex: SecureRandom.uuid
+  payload: {
+    start_date: 81421343 # needs to be integer ex: Time.now.to_i,
+    end_date: 81421343 # needs to be integer ex: Time.now.to_i
+  }
+)
+```
+
+#### Start transaction (TSS)
+
+https://developer.fiskaly.com/api/kassensichv/v2#operation/upsertTransaction
+
+```ruby
+FiskalyRuby.kassensichv_tss_tx_upsert(
+  token: "access_token",
+  tss_id: "tss_id",
+  tx_revision: 1, # when you start a transaction, tx_revision is auto assigned to 1 by our gem, you can skip this if you want
+  payload: {
+    state: :ACTIVE,
+    client_id: "client_id"
+  }
+)
+```
+
+#### Update/Finish transaction (TSS)
+
+https://developer.fiskaly.com/api/kassensichv/v2#operation/upsertTransaction
+
+```ruby
+FiskalyRuby.kassensichv_tss_tx_upsert(
+  token: "access_token",
+  tss_id: "tss_id",
+  tx_id_or_number: "00000000-0000-0000-0000-000000000000",
+  tx_revision: 2,
+  payload: {
+    state: :FINISHED,
+    client_id: "client_id",
+    schema: {
+      standard_v1: {
+        receipt: {
+          receipt_type: "RECEIPT",
+          amounts_per_vat_rate: [
+            {
+              vat_rate: :NORMAL,
+              :amount=>"150.00000"
+            }
+          ],
+          amounts_per_payment_type: [
+            {
+              payment_type: :CASH,
+              amount: "150.00000"
+            }
+          ]
+        }
+      }
+    }
+  }
+)
+```
+
 ## Development
 
 After checking out the repo, run `bundle install` to install dependencies. Then, run `bundle exec rspec spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
