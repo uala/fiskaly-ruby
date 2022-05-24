@@ -12,6 +12,7 @@ end
 group :test do
   gem 'httparty'
   gem 'json_spec'
+  gem 'simplecov', require: false
   gem 'vcr'
   gem 'webmock'
 end
