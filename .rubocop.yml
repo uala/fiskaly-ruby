@@ -30,6 +30,7 @@ Metrics/BlockLength:
 Naming/FileName:
   Exclude:
     - 'lib/fiskaly-ruby.rb'
+    - 'spec/lib/fiskaly-ruby_spec.rb'
 
 Lint/MissingSuper:
   Exclude:

@@ -2,6 +2,7 @@
 
 require 'net/http'
 
+require_relative 'fiskaly_ruby/base'
 require_relative 'fiskaly_ruby/base_request'
 require_relative 'fiskaly_ruby/dsfinvk/base'
 require_relative 'fiskaly_ruby/kassen_sich_v/base'
@@ -42,16 +43,7 @@ module FiskalyRuby
 
   class << self
     COMMANDS.each do |command|
-      name = command.name
-      method_name = name.split('::')[1..].map do |command_name|
-        if %w(KassenSichV TSS DSFinVK).include?(command_name)
-          command_name.downcase
-        else
-          command_name.gsub(/(.)([A-Z])/, '\1_\2').downcase
-        end
-      end.join('_')
-
-      define_method(method_name) do |args|
+      define_method(command.to_method_name) do |args|
         command.call(args)
       end
     end

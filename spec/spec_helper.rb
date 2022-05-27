@@ -1,5 +1,15 @@
 # frozen_string_literal: true
 
+unless ENV['DISABLE_SIMPLE_COV']
+  require 'simplecov'
+
+  SimpleCov.start do
+    add_filter '/spec/'
+    minimum_coverage 98
+    maximum_coverage_drop 1
+  end
+end
+
 require 'fiskaly-ruby'
 require 'fiskaly_testing'
 require 'rubygems'
