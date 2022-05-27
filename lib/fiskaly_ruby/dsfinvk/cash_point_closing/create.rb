@@ -50,6 +50,7 @@ module FiskalyRuby
           _validate_head
           _validate_cash_statement
           _validate_transactions
+          _validate_client_id
           _validate_cash_point_closing_export_id
         end
 
