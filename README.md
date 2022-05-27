@@ -1,4 +1,4 @@
-# FiskalyRuby
+# FiskalyRuby ![build](https://github.com/uala/fiskaly-ruby/actions/workflows/main.yml/badge.svg)
 FiskalyRuby is a gem developed by UALA/Treatwell SaaS team.
 It provides a collection of commands that will help you communicate with Fiskaly Api (https://developer.fiskaly.com/api).
 We use Fiskaly to help our German venues manage their fiscal obligations.
