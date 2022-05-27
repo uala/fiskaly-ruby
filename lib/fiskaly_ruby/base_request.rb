@@ -4,7 +4,7 @@ require 'httparty'
 
 module FiskalyRuby
   # Base request handler class
-  class BaseRequest
+  class BaseRequest < Base
     include HTTParty
 
     # Useful for subclasses requests
@@ -27,6 +27,8 @@ module FiskalyRuby
     #
     # @return FiskalyRuby::BaseRequest
     def initialize(token:, payload: {})
+      super()
+
       @token = token
       @payload = payload
     end

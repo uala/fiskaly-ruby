@@ -2,6 +2,7 @@
 
 require 'net/http'
 
+require_relative 'fiskaly_ruby/base'
 require_relative 'fiskaly_ruby/base_request'
 require_relative 'fiskaly_ruby/dsfinvk/base'
 require_relative 'fiskaly_ruby/kassen_sich_v/base'
