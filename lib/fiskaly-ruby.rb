@@ -1,15 +1,6 @@
 # frozen_string_literal: true
 
-require 'net/http'
-
-require_relative 'fiskaly_ruby/base'
-require_relative 'fiskaly_ruby/base_request'
-require_relative 'fiskaly_ruby/dsfinvk/base'
-require_relative 'fiskaly_ruby/kassen_sich_v/base'
-require_relative 'fiskaly_ruby/management/base'
-
-lib = File.expand_path('fiskaly_ruby', __dir__)
-Dir["#{lib}/**/*.rb"].sort.each { |f| require f }
+require_relative 'fiskaly_ruby/requires'
 
 # A ruby gem that allows you to easily communicate with fiskaly service
 module FiskalyRuby
