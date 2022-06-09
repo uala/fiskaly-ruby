@@ -13,7 +13,7 @@ RSpec.describe FiskalyRuby do
 
   describe 'COMMANDS' do
     described_class::COMMANDS.each do |command|
-      method_name = command.to_method_name.to_sym
+      method_name = FiskalyRuby.command_to_method_name(command).to_sym
 
       describe ".#{method_name}" do
         let(:args) { { some: { random: :arguments } } }
