@@ -4,7 +4,7 @@ require 'httparty'
 
 module FiskalyRuby
   # Base request handler class
-  class BaseRequest < Base
+  class BaseRequest
     include HTTParty
 
     # Useful for subclasses requests

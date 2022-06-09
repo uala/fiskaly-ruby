@@ -2,7 +2,6 @@
 
 require 'net/http'
 
-require_relative 'fiskaly_ruby/base'
 require_relative 'fiskaly_ruby/base_request'
 require_relative 'fiskaly_ruby/dsfinvk/base'
 require_relative 'fiskaly_ruby/kassen_sich_v/base'
@@ -41,9 +40,25 @@ module FiskalyRuby
     DSFinVK::Exports::Trigger
   ].freeze
 
+  CANNOT_SNAKE_CASE = %w(
+    KassenSichV
+    TSS
+    DSFinVK
+  ).freeze
+
+  def self.command_to_method_name(command)
+    # `FiskalyRuby` is not part of the command name, we strip it using `[1..]`.
+    command_name_chunks = command.name.split('::')[1..]
+    command_name_chunks.map! do |chunk|
+      chunk.gsub!(/(.)([A-Z])/, '\1_\2') unless CANNOT_SNAKE_CASE.include?(chunk)
+      chunk.downcase
+    end
+    command_name_chunks.join('_')
+  end
+
   class << self
     COMMANDS.each do |command|
-      define_method(command.to_method_name) do |args|
+      define_method(FiskalyRuby.command_to_method_name(command)) do |args|
         command.call(args)
       end
     end
